@@ -1,0 +1,101 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+/* Header */
+header {
+    width: 100%;
+    height: 90px;
+}
+.logo {
+    width: 25%;
+    height: 100%;
+    background-image: url('../img/logo.PNG');
+    background-size: 100% 100%;
+    float: left;
+}
+.form-inline {
+    float: left;
+    width: 45%;
+    margin-left: 3%;
+    margin-top: 25px;
+}
+.form-inline .form-control {
+    width: 80% !important;
+}
+.form-inline .btn {
+    width: 20% !important;
+}
+.form-inline .btn-outline-primary {
+    background-color: #007bff !important;
+    color: black;
+}
+.login {
+    width: 6%;
+    height: 100%;
+    float: left;
+    margin-left: 10%;
+    text-align: center;
+    padding-top: 10px;
+    font-family: sans-serif;
+}
+.login img {
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50px; */
+}
+.shopping_cart {
+    width: 6%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 10px;
+}
+.shopping_cart img {
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50px; */
+}
+/* Nav */
+nav {
+    width: 70%;
+    height: 70px;
+    margin: auto;
+    border-bottom: solid 10px #d4d4d4;
+}
+.nav-item {
+    width: 19%;
+    height: 60px;
+    float: left;
+    margin-left: 1%;
+    text-align: center;
+    font-family: sans-serif;
+}
+.nav-item img {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.nav-item p {
+    float: left;
+    line-height: 50px;
+}
+/* Main */
+main {
+    width: 100%;
+    height: auto;
+    background-color: red;
+}
+
+.teste {
+    width: 50%;
+    height: 500px;
+    background-color: blue;
+    margin: auto;
+}
+
+footer {
+    width: 100%;
+    height: 120px;
+    background-color: blueviolet;
+}
