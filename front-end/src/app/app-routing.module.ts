@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { PromocoesComponent } from './promocoes/promocoes.component';
+import { PromocoesComponent } from './pages/promocoes/promocoes.component';
 
 
 const routes: Routes = [

@@ -1,0 +1,35 @@
+<main>
+    <div class="content-main">
+        <h1>Promoções</h1>
+        <div class="propaganda">
+            <img src="../../../assets/img/promocao.jpg" alt="">
+        </div>
+        <div class="content-produto">
+            <div *ngFor="let p of produto" class="produto">
+                <img src="../assets/img/{{ p.imagem }}" alt="">
+                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
+                <div class="valor-anterior">{{ p.valor_anterior }}</div>
+                <div class="valor-produto">R$ {{ p.valor }}</div>
+                <button type="button" class="btn btn-success">Comprar</button>
+            </div>
+        </div>
+        <div class="content-produto">
+            <div *ngFor="let p of produto" class="produto">
+                <img src="../assets/img/{{ p.imagem }}" alt="">
+                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
+                <div class="valor-anterior">{{ p.valor_anterior }}</div>
+                <div class="valor-produto">R$ {{ p.valor }}</div>
+                <button type="button" class="btn btn-success">Comprar</button>
+            </div>
+        </div>
+        <div class="content-produto">
+            <div *ngFor="let p of produto" class="produto">
+                <img src="../assets/img/{{ p.imagem }}" alt="">
+                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
+                <div class="valor-anterior">{{ p.valor_anterior }}</div>
+                <div class="valor-produto">R$ {{ p.valor }}</div>
+                <button type="button" class="btn btn-success">Comprar</button>
+            </div>
+        </div>
+    </div>
+</main>
