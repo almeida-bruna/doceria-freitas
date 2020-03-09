@@ -1,11 +1,11 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Product extends Model {
+class News extends Model {
   static init(sequelize) {
     super.init(
       {
         name: Sequelize.STRING,
-        type: Sequelize.STRING,
+        text: Sequelize.STRING,
         disabled: Sequelize.STRING,
       },
       {
@@ -17,4 +17,4 @@ class Product extends Model {
   }
 }
 
-export default Product;
+export default News;
