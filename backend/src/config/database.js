@@ -3,10 +3,10 @@ module.exports = {
   host: 'localhost',
   username: 'root',
   password: '',
-  database: 'trip_maker',
+  database: 'doceria_freitas',
   define: {
     timestamps: true,
     underscored: true,
-    underscoredAll: true
-  }
+    underscoredAll: true,
+  },
 };
