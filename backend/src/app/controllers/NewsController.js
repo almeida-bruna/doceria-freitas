@@ -2,7 +2,7 @@ import News from '../models/News';
 
 class NewsController {
   async store(req, res) {
-    const newsExists = await User.findOne({ where: { name: req.body.name } });
+    const newsExists = await News.findOne({ where: { name: req.body.name } });
 
     if (newsExists) {
       return res.status(400).json({ error: 'News already exists' });
@@ -12,7 +12,7 @@ class NewsController {
 
     return res.json({
       id,
-      name
+      name,
     });
   }
 
@@ -37,7 +37,7 @@ class NewsController {
 
     return res.json({
       id,
-      name
+      name,
     });
   }
 

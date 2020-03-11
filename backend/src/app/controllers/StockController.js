@@ -1,55 +1,57 @@
-import Product from '../models/Product';
+import Stock from '../models/Stock';
 
-class ProductController {
+class StockController {
   async store(req, res) {
-    const productExists = await User.findOne({ where: { email: req.body.email } });
+    const stockExists = await Stock.findOne({
+      where: { email: req.body.email },
+    });
 
-    if (productExists) {
-      return res.status(400).json({ error: 'Product already exists' });
+    if (stockExists) {
+      return res.status(400).json({ error: 'stock already exists' });
     }
 
-    const { id, name } = await User.create(req.body);
+    const { id, name } = await Stock.create(req.body);
 
     return res.json({
       id,
-      name
+      name,
     });
   }
 
   async update(req, res) {
-    const productId = req.params.id;
+    const stockId = req.params.id;
 
-    const product = await User.findByPk(productId);
+    const stock = await Stock.findByPk(stockId);
 
     const dados = req.body;
 
     if (dados.name) {
-      const productExists = await product.findOne({
+      const stockExists = await stock.findOne({
         where: { name: req.body.name },
       });
 
-      if (productExists) {
-        return res.status(400).json({ error: 'product already exists' });
+      if (stockExists) {
+        return res.status(400).json({ error: 'stock already exists' });
       }
     }
 
-    const { id, name } = await user.update(req.body);
+    const { id, name } = await Stock.update(req.body);
 
     return res.json({
       id,
-      name
+      name,
     });
   }
 
   async get(req, res) {
-    const product = await Product.findAll({
+    const stock = await Stock.findAll({
       where: {
         disabled: '0',
       },
     });
 
-    return res.json(product);
+    return res.json(stock);
   }
 }
 
-export default new ProductController();
+export default new StockController();
