@@ -6,8 +6,10 @@ header {
 .logo {
     width: 20%;
     height: 100%;
-    background-image: url('../../assets/img/logo.PNG');
-    background-size: 100% 100%;
+}
+.logo img{
+    width: 110%;
+    height: 100%;
 }
 nav {
     width: 43%;
