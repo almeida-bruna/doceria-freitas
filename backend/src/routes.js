@@ -1,17 +1,25 @@
 import { Router } from 'express';
+import multer from 'multer';
+import multerConfig from './config/multer';
 import UserController from './app/controllers/UserController';
 import ProductController from './app/controllers/ProductController';
 import NewsController from './app/controllers/NewsController';
 import StockController from './app/controllers/StockController';
 import SessionController from './app/controllers/SessionController';
+import FilterProductController from './app/controllers/FilterProductController';
+// import FileController from './app/controllers/FileController';
 import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
+const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
 
 // Middlewares
 routes.use(authMiddlewares);
+
+// Filter
+routes.get('/filter', FilterProductController.show);
 
 // Users
 routes.post('/users', UserController.store);
@@ -32,5 +40,11 @@ routes.get('/news', NewsController.get);
 routes.post('/stock', StockController.store);
 routes.put('/stock/:id', StockController.update);
 routes.get('/stock', StockController.get);
+
+// Files
+routes.post('/files', upload.single('file'), (req, res) => {
+  return res.json({ ok: true });
+});
+// routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;

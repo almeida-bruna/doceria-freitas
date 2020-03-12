@@ -3,7 +3,7 @@ import Product from '../models/Product';
 class ProductController {
   async store(req, res) {
     const productExists = await Product.findOne({
-      where: { email: req.body.email },
+      where: { name: req.body.name },
     });
 
     if (productExists) {
