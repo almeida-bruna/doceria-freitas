@@ -7,7 +7,7 @@ class FilterProductController {
     const products = await Product.findAll({
       where: {
         name: {
-          [Op.likeLike]: `%${product}`,
+          [Op.like]: `%${product}`,
         },
       },
     });
