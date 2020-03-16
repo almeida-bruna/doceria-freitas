@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/usuario/cadastro/cadastro.component';
 import { NovidadesComponent } from './pages/novidades/novidades.component';
 import { SobreAEmpresaComponent } from './pages/sobre-a-empresa/sobre-a-empresa.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { SobreAEmpresaComponent } from './pages/sobre-a-empresa/sobre-a-empresa.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

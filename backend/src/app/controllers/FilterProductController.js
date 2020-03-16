@@ -3,11 +3,12 @@ import Product from '../models/Product';
 
 class FilterProductController {
   async show(req, res) {
-    const product = req.body.name;
+    const product = req.query;
+
     const products = await Product.findAll({
       where: {
         name: {
-          [Op.like]: `%${product}`,
+          [Op.like]: `%${product.name}`,
         },
       },
     });
