@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   searchProduct = new FormControl;
 
-  search_url = "https://api.cdnjs.com/libraries";
+  search_url = 'http://localhost:3333/filter';
 
   results: any;
 
@@ -44,11 +44,9 @@ export class HomeComponent implements OnInit {
   onSearch() {
     let searchValue = this.searchProduct.value;
 
-    let params = { "name": "angular" };
+    let params = { "name": searchValue };
 
     this.results = this.http.get(this.search_url, { params } )
-    .pipe(
-      map((res: any) => res.results))
 
     console.log(this.results);
   }

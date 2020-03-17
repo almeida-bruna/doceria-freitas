@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
+import cors from 'cors';
 import multerConfig from './config/multer';
 import UserController from './app/controllers/UserController';
 import ProductController from './app/controllers/ProductController';
@@ -14,6 +15,10 @@ const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
+
+routes.use (cors ({
+  origin: 'http://localhost:4200'
+}));
 
 // Middlewares
 // routes.use(authMiddlewares);
