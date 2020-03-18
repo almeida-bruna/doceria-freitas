@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { NovidadesComponent } from './pages/novidades/novidades.component';
 import { SobreAEmpresaComponent } from './pages/sobre-a-empresa/sobre-a-empresa.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FaleConoscoComponent } from './pages/fale-conosco/fale-conosco.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +25,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     CadastroComponent,
     NovidadesComponent,
-    SobreAEmpresaComponent
+    SobreAEmpresaComponent,
+    FaleConoscoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

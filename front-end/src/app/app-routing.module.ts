@@ -1,3 +1,5 @@
+import { LoginComponent } from './pages/login/login.component';
+import { FaleConoscoComponent } from './pages/fale-conosco/fale-conosco.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'promocoes', component: PromocoesComponent },
   { path: 'novidades', component: NovidadesComponent},
   { path: 'sobre_a_empresa', component: SobreAEmpresaComponent},
-  { path: 'cadastro', component: CadastroComponent}
+  { path: 'cadastro', component: CadastroComponent},
+  { path: 'fale-conosco', component: FaleConoscoComponent},
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,31 @@
+main {
+    width: 100%;
+    height: auto;
+    background-color: #ea786b;
+    padding-bottom: 30px;
+}
+.content-main {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: 20px;
+}
+.title-empresa{
+    width: 95%;
+    height: 200px;
+    background-color: #fff;
+    margin: auto;
+    line-height: 200px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 35px;
+}
+.content-form{
+    width: 50%;
+    height: 500px;
+    background-color: #fff;
+    margin-left: 25%;
+    margin-top: 20px;
+    padding: 15px 25px 15px 25px;
+    border-radius: 4px;
+}
