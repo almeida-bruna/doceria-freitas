@@ -11,7 +11,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      type: {
+      unity: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      price: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -21,10 +33,6 @@ module.exports = {
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false,
-      },
-      disabled: {
-        type: Sequelize.STRING,
         allowNull: false,
       },
     });

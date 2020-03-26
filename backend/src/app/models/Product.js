@@ -5,8 +5,10 @@ class Product extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        type: Sequelize.STRING,
-        disabled: Sequelize.STRING,
+        unity: Sequelize.STRING,
+        status: Sequelize.STRING,
+        description: Sequelize.STRING,
+        price: Sequelize.STRING,
       },
       {
         sequelize,
@@ -15,6 +17,11 @@ class Product extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'img_id', as: 'img' });
+  }
+
 }
 
 export default Product;

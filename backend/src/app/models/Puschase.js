@@ -1,14 +1,14 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Stock extends Model {
+class Purchase extends Model {
   static init(sequelize) {
     super.init(
       {
-        quantidade: Sequelize.STRING,
-        disabled: Sequelize.STRING
+        payment_method: Sequelize.STRING,
+        date: Sequelize.STRING
       },
       {
-        sequelize
+        sequelize,
       }
     );
 
@@ -16,8 +16,10 @@ class Stock extends Model {
   }
 
   static associate(models) {
+    this.belongsTo(models.Client, { foreignKey: 'client_id', as: 'client' });
     this.belongsTo(models.Product, { foreignKey: 'product_id', as: 'product' });
   }
+
 }
 
-export default Stock;
+export default Purchase;

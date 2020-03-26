@@ -1,4 +1,5 @@
 import User from '../models/User';
+import File from '../models/File';
 
 class UserController {
   async store(req, res) {
@@ -52,6 +53,13 @@ class UserController {
       where: {
         disabled: '0',
       },
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['id', 'path', 'url']
+        }
+      ]
     });
 
     return res.json(user);
