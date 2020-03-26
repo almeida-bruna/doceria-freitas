@@ -15,6 +15,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FaleConoscoComponent } from './pages/fale-conosco/fale-conosco.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CarrinhoComponent } from './pages/compra/carrinho/carrinho.component';
+import { ProdutoComponent } from './pages/compra/produto/produto.component';
+import { ConfirmaEmailComponent } from './pages/compra/confirma-email/confirma-email.component';
+import { ResumoPedidoComponent } from './pages/compra/resumo-pedido/resumo-pedido.component';
+import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pagamento.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,12 @@ import { LoginComponent } from './pages/login/login.component';
     NovidadesComponent,
     SobreAEmpresaComponent,
     FaleConoscoComponent,
-    LoginComponent
+    LoginComponent,
+    CarrinhoComponent,
+    ProdutoComponent,
+    ConfirmaEmailComponent,
+    ResumoPedidoComponent,
+    FormaPagamentoComponent
   ],
   imports: [
     BrowserModule,

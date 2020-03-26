@@ -1,6 +1,8 @@
+import { CarrinhoComponent } from './../compra/carrinho/carrinho.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -15,10 +17,7 @@ export class HomeComponent implements OnInit {
 
   results: any;
 
-  constructor(private http:HttpClient) {}
-
-  ngOnInit(): void {
-  }
+  constructor(private http:HttpClient, private modalService: NgbModal) {}
 
   produto = [
     {
@@ -40,6 +39,13 @@ export class HomeComponent implements OnInit {
       imagem: "pirulito-pop.webp"
     }
   ]
+
+  ngOnInit(): void {
+  }
+
+  openModalCarrinho() {
+    this.modalService.open(CarrinhoComponent)
+  }
 
   onSearch() {
     let searchValue = this.searchProduct.value;

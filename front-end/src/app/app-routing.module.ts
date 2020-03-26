@@ -1,3 +1,7 @@
+import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pagamento.component';
+import { ResumoPedidoComponent } from './pages/compra/resumo-pedido/resumo-pedido.component';
+import { ConfirmaEmailComponent } from './pages/compra/confirma-email/confirma-email.component';
+import { ProdutoComponent } from './pages/compra/produto/produto.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FaleConoscoComponent } from './pages/fale-conosco/fale-conosco.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +21,11 @@ const routes: Routes = [
   { path: 'sobre_a_empresa', component: SobreAEmpresaComponent},
   { path: 'cadastro', component: CadastroComponent},
   { path: 'fale-conosco', component: FaleConoscoComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'produto', component: ProdutoComponent},
+  { path: 'confirma-email', component: ConfirmaEmailComponent},
+  { path: 'resumo-pedido', component: ResumoPedidoComponent},
+  { path: 'forma-pagamento', component: FormaPagamentoComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,47 @@
+/* Main */
+main {
+    width: 100%;
+    height: auto;
+    background-color: #ea786b;
+    padding-bottom: 30px;
+}
+.content-main {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    background-color: #fff;
+    border-top: solid 1px #ea786b;
+}
+.content-title{
+    width: 230px;
+    height: 50px;
+    background-color: #e22d4b;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    padding: 7px 14px;
+}
+.icon-box{
+    width: 30px;
+    height: 30px;
+}
+h2{
+    text-align: center;
+    margin-top: 50px;
+}
+.form-email{
+    width: 60%;
+    height: 50px;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+.form-control{
+    float: left;
+    width: 85% !important;
+}
+.btn{
+    float: left;
+}

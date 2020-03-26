@@ -2,7 +2,8 @@
     <div class="content-main">
         <div class="content-seashe">
             <form class="form-inline">
-                <input class="form-control" type="search" [formControl]="searchProduct" placeholder="Pesquisar" aria-label="Pesquisar">
+                <input class="form-control" type="search" [formControl]="searchProduct" placeholder="Pesquisar"
+                    aria-label="Pesquisar">
                 <button (click)="onSearch()" class="btn btn-outline-primary" type="submit">Pesquisar</button>
             </form>
         </div>
@@ -10,30 +11,36 @@
             <img src="../assets/img/banner-fini.gif" alt="">
         </div>
         <div *ngFor="let r of results | async">
-          <td>{{r.name}}</td>
+            <td>{{r.name}}</td>
         </div>
         <div class="content-produto">
-            <div *ngFor="let p of produto" class="produto">
-                <img src="../assets/img/{{ p.imagem }}" alt="">
-                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
-                <div class="valor-produto">R$ {{ p.valor }}</div>
-                <button type="button" class="btn btn-success">Comprar</button>
+            <div *ngFor="let p of produto" class="card" style="width: 18rem;">
+                <a class="content-img" href="#" routerLink="/produto" routerLinkActive="active"><img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
+                    <p class="card-text">R$ {{ p.valor }}</p>
+                    <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
+                </div>
             </div>
         </div>
         <div class="content-produto">
-            <div *ngFor="let p of produto" class="produto">
-                <img src="../assets/img/{{ p.imagem }}" alt="">
-                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
-                <div class="valor-produto">R$ {{ p.valor }}</div>
-                <button type="button" class="btn btn-success">Comprar</button>
+            <div *ngFor="let p of produto" class="card" style="width: 18rem;">
+                <a class="content-img" href="#" routerLink="/produto" routerLinkActive="active"><img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
+                    <p class="card-text">R$ {{ p.valor }}</p>
+                    <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
+                </div>
             </div>
         </div>
         <div class="content-produto">
-            <div *ngFor="let p of produto" class="produto">
-                <img src="../assets/img/{{ p.imagem }}" alt="">
-                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
-                <div class="valor-produto">R$ {{ p.valor }}</div>
-                <button type="button" class="btn btn-success">Comprar</button>
+            <div *ngFor="let p of produto" class="card" style="width: 18rem;">
+                <a class="content-img" href="#" routerLink="/produto" routerLinkActive="active"><img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
+                    <p class="card-text">R$ {{ p.valor }}</p>
+                    <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
+                </div>
             </div>
         </div>
     </div>

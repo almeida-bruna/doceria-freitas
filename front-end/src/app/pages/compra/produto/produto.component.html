@@ -1,0 +1,17 @@
+<div class="content-produto">
+    <div class="produto-imagem">
+        <img src="../../../../assets/img/bubaaoo-uva.webp" alt="">
+    </div>
+    <div class="informe-produto">
+        <div class="title-produto">
+            <h2>{{ produto.nome }} {{ produto.quantidade}}</h2>
+        </div>
+        <div class="content-info">
+            <br>
+            <div class="valor-antigo">De: <strong>R$ 10,00</strong></div><br>
+            <div style="color: #A7AAAB;">Por:</div>
+            <div class="valor-atual">R$ {{produto.valor}}</div>
+            <button routerLink="/resumo-pedido" type="button" class="btn btn-success">Comprar</button>
+        </div>
+    </div>
+</div>

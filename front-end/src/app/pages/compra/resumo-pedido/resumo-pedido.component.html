@@ -1,0 +1,33 @@
+<main>
+    <div class="content-main">
+        <div class="content-title">
+            <img class="icon-box" src="../../../../assets/icons/caixa.png" alt="">Resumo do Pedido
+        </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th style="border-bottom-left-radius: 15px; border-top-left-radius: 15px;" scope="col">Imagem</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Preço</th>
+                <th style="border-bottom-right-radius: 15px; border-top-right-radius: 15px;" scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of produtos" class="line">
+                    <th><img class="img-table" src="../../../../assets/img/{{ p.imagem }}" alt="bala"></th>
+                    <td>{{ p.nome }}</td>
+                    <td>{{ p.quant }}</td>
+                    <td>{{ p.preco }}</td>
+                    <td>{{ p.total }}</td>
+                  </tr>
+            </tbody>
+          </table>
+          <div class="content-total">
+              <div class="content-line">Subtotal: R$ 51,00</div>
+              <div class="content-line">Frete: R$ 10,00</div>
+              <div class="content-line">Total: R$ 61,00</div>
+          </div>
+          <button routerLink="/confirma-email" type="button" class="btn btn-success">Finalizar compra</button>
+    </div>
+</main>
