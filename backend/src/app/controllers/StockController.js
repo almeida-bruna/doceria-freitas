@@ -3,7 +3,7 @@ import Stock from '../models/Stock';
 class StockController {
   async store(req, res) {
     const stockExists = await Stock.findOne({
-      where: { email: req.body.email },
+      where: { product_id: req.body.product_id },
     });
 
     if (stockExists) {

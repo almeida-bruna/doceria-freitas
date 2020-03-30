@@ -3,10 +3,12 @@ import Sequelize from 'sequelize';
 import User from '../app/models/User';
 import Product from '../app/models/Product';
 import News from '../app/models/News';
+import File from '../app/models/File';
+import Stock from '../app/models/Stock';
 
 import databaseConfig from '../config/database';
 
-const models = [User, Product, News];
+const models = [User, Product, News, File, Stock];
 
 class Database {
   constructor() {

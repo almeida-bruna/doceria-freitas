@@ -8,7 +8,7 @@ import NewsController from './app/controllers/NewsController';
 import StockController from './app/controllers/StockController';
 import SessionController from './app/controllers/SessionController';
 import FilterProductController from './app/controllers/FilterProductController';
-// import FileController from './app/controllers/FileController';
+import FileController from './app/controllers/FileController';
 import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
@@ -21,7 +21,7 @@ routes.use (cors ({
 }));
 
 // Middlewares
-// routes.use(authMiddlewares);
+routes.use(authMiddlewares);
 
 // Filter
 routes.get('/filter', FilterProductController.show);
@@ -47,9 +47,6 @@ routes.put('/stock/:id', StockController.update);
 routes.get('/stock', StockController.get);
 
 // Files
-routes.post('/files', upload.single('file'), (req, res) => {
-  return res.json({ ok: true });
-});
-// routes.post('/files', upload.single('file'), FileController.store);
+routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;

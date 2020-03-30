@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
-// eslint-disable-next-line import/no-unresolved
 import authConfig from '../../config/Auth';
 
 class SessionController {
@@ -23,11 +22,11 @@ class SessionController {
       user: {
         id,
         name,
-        email,
+        email
       },
       token: jwt.sign({ id }, authConfig.secret, {
-        expiresIn: authConfig.expiresIn,
-      }),
+        expiresIn: authConfig.expiresIn
+      })
     });
   }
 }
