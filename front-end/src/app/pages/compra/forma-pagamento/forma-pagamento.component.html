@@ -38,53 +38,54 @@
                                 <input type="number" class="form-control">
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                    class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline1">Master</label>
+                                <input type="radio" id="1" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="1">Master</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="2" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="2">Visa</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="3" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="3">Elo</label>
+                              </div>
+                            <div class="content-radios">
+                                <img src="../../../../assets/icons/mastercard.png" alt="Master">
+                                <img src="../../../../assets/icons/visto.png" alt="Visa">
+                                <img class="img-elo" src="../../../../assets/img/elo-logo-1-1.png" alt="Elo">
                             </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                    class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">Visa</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                    class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">Elo</label>
-                            </div><br><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nome impresso no cartão</label>
                                 <input type="text" class="form-control">
                             </div>
-                            <div class="form-group col-md-6" style="float: left;">
-                                <label for="inputState">Ano</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>2021</option>
-                                    <option>2022</option>
-                                    <option>2023</option>
-                                </select>
+                            <div class="form-group col-md-10" style="padding-left: 0px !important; height: 70px;">
+                                <div class="form-group col-md-4" style="float: left; padding-left: 0px !important;">
+                                    <label for="inputState">Ano</label>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>2021</option>
+                                      <option>2022</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4" style="float: left;">
+                                    <label for="inputState">Mês</label>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>1</option>
+                                      <option>2</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group col-md-4" style="float: left;">
-                                <label for="inputState">Mês</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-5" style="padding-left: 0px !important;"> 
                                 <label for="exampleInputEmail1">Código de segurança</label>
-                                <input type="number" class="form-control col-md-4">
+                                <input type="number" class="form-control">
                             </div>
-                            <div class="form-group col-md-10" style="float: left;">
+                            <div class="form-group col-md-6" style="padding-left: 0px !important;">
                                 <label for="inputState">Parcelas</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>1x - 100,00</option>
-                                    <option>2x - 50,00</option>
-                                    <option>3x - 33,33</option>
+                                  <option selected>1x - 100,00</option>
+                                  <option>2x - 50,00</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-10" style="padding-left: 0px !important;">
                                 <label for="exampleInputEmail1">CPF</label>
                                 <input type="number" class="form-control">
                             </div>
@@ -93,6 +94,17 @@
                 </div>
             </div>
             <div class="content-pedido">
+                <i class="material-icons">format_list_bulleted</i>
+                <div class="title-dados-pessoais">Resumo</div>
+                <ul>
+                    <li *ngFor="let p of produtos"><img src="../../../../assets/img/{{p.imagem}}" alt="produto">{{p.nome}} - {{p.preco}}</li>
+                </ul>
+                <div class="content-total">
+                    <div class="content-line"><strong>Subtotal:</strong> R$ 51,00</div>
+                    <div class="content-line"><strong>Frete:</strong> R$ 10,00</div>
+                    <div class="content-line"><strong>Total:</strong> R$ 61,00</div>
+                </div>
+                <button type="button" class="btn btn-success">Finalizar compra</button>
             </div>
         </div>
     </div>
