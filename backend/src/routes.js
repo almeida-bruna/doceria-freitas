@@ -9,6 +9,7 @@ import StockController from './app/controllers/StockController';
 import SessionController from './app/controllers/SessionController';
 import FilterProductController from './app/controllers/FilterProductController';
 import FileController from './app/controllers/FileController';
+import ClientController from './app/controllers/ClientController';
 // import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
@@ -27,6 +28,11 @@ routes.use(
 
 // Filter
 routes.get('/filter', FilterProductController.show);
+
+// Clients
+routes.post('/clients', ClientController.store);
+routes.put('/clients/:id', ClientController.update);
+routes.get('/clients', ClientController.get);
 
 // Users
 routes.post('/users', UserController.store);
