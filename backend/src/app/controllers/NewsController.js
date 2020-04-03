@@ -1,4 +1,5 @@
 import News from '../models/News';
+import File from '../models/File';
 
 class NewsController {
   async store(req, res) {
@@ -46,6 +47,13 @@ class NewsController {
       where: {
         disabled: '0',
       },
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
     });
 
     return res.json(news);

@@ -5,7 +5,7 @@ class News extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        text: Sequelize.STRING,
+        description: Sequelize.STRING,
         disabled: Sequelize.STRING,
       },
       {
@@ -17,7 +17,7 @@ class News extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.File, { foreignKey: 'img_id', as: 'img' });
+    this.belongsTo(models.File, { foreignKey: 'img_id', as: 'avatar' });
   }
 }
 

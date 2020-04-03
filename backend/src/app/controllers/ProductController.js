@@ -1,4 +1,5 @@
 import Product from '../models/Product';
+import File from '../models/File';
 
 class ProductController {
   async store(req, res) {
@@ -46,8 +47,15 @@ class ProductController {
   async get(req, res) {
     const product = await Product.findAll({
       where: {
-        disabled: '0',
+        status: 'ativo',
       },
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
     });
 
     return res.json(product);

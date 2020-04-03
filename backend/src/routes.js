@@ -9,19 +9,21 @@ import StockController from './app/controllers/StockController';
 import SessionController from './app/controllers/SessionController';
 import FilterProductController from './app/controllers/FilterProductController';
 import FileController from './app/controllers/FileController';
-import authMiddlewares from './app/middlewares/auth';
+// import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
 
-routes.use (cors ({
-  origin: 'http://localhost:4200'
-}));
+routes.use(
+  cors({
+    origin: 'http://localhost:4200',
+  })
+);
 
 // Middlewares
-routes.use(authMiddlewares);
+// routes.use(authMiddlewares);
 
 // Filter
 routes.get('/filter', FilterProductController.show);
