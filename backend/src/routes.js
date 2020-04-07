@@ -8,8 +8,10 @@ import NewsController from './app/controllers/NewsController';
 import StockController from './app/controllers/StockController';
 import SessionController from './app/controllers/SessionController';
 import FilterProductController from './app/controllers/FilterProductController';
+import FilterCategoryController from './app/controllers/FilterCategoryController';
 import FileController from './app/controllers/FileController';
 import ClientController from './app/controllers/ClientController';
+import CategoryController from './app/controllers/CategoryController';
 // import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
@@ -26,8 +28,11 @@ routes.use(
 // Middlewares
 // routes.use(authMiddlewares);
 
-// Filter
-routes.get('/filter', FilterProductController.show);
+// Filter Product
+routes.get('/filterproduct', FilterProductController.show);
+
+// Filter Category
+routes.get('/filtercategory', FilterCategoryController.show);
 
 // Clients
 routes.post('/clients', ClientController.store);
@@ -43,6 +48,11 @@ routes.get('/users', UserController.get);
 routes.post('/product', ProductController.store);
 routes.put('/product/:id', ProductController.update);
 routes.get('/product', ProductController.get);
+
+// Category
+routes.post('/category', CategoryController.store);
+routes.put('/category/:id', CategoryController.update);
+routes.get('/category', CategoryController.get);
 
 // News
 routes.post('/news', NewsController.store);
