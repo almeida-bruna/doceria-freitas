@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent},
   { path: 'fale-conosco', component: FaleConoscoComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'produto', component: ProdutoComponent},
+  { path: 'produto/:id', component: ProdutoComponent},
   { path: 'confirma-email', component: ConfirmaEmailComponent},
   { path: 'resumo-pedido', component: ResumoPedidoComponent},
   { path: 'forma-pagamento', component: FormaPagamentoComponent}

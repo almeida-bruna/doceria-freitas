@@ -1,17 +1,17 @@
-<div class="content-produto">
+<div class="content-produto" *ngFor="let p of product | async">
     <div class="produto-imagem">
-        <img src="../../../../assets/img/bubaaoo-uva.webp" alt="">
+        <img src="{{p.avatar.url}}" alt="">
     </div>
     <div class="informe-produto">
         <div class="title-produto">
-            <h2>{{ produto.nome }} {{ produto.quantidade}}</h2>
+            <h2>{{ p.name }} {{ p.quantidade}}</h2>
         </div>
         <div class="content-info">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, aut rerum tenetur ipsa error quos sit fuga quae molestias animi quis laborum optio nisi dignissimos numquam impedit praesentium cum iure!</p>
+            <p>{{p.description}}</p>
             <br>
-            <div class="valor-antigo">De: <strong>R$ 10,00</strong></div><br>
+            <div class="valor-antigo">De: <strong>R$ {{p.price}}</strong></div><br>
             <div style="color: #A7AAAB;">Por:</div>
-            <div class="valor-atual">R$ {{produto.valor}}</div>
+            <div class="valor-atual">R$ {{p.price}}</div>
             <button routerLink="/resumo-pedido" type="button" class="btn btn-success">Comprar</button>
         </div>
     </div>

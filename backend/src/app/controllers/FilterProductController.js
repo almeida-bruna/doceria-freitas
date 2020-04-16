@@ -1,5 +1,7 @@
 import { Op } from 'sequelize';
 import Product from '../models/Product';
+import File from '../models/File';
+
 
 class FilterProductController {
   async show(req, res) {
@@ -11,6 +13,25 @@ class FilterProductController {
           [Op.like]: `%${product.name}`,
         },
       },
+    });
+
+    return res.json(products);
+  }
+
+  async get(req, res) {
+    const product = req.query;
+
+    const products = await Product.findAll({
+      where: {
+        id: product.id
+      },
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
     });
 
     return res.json(products);

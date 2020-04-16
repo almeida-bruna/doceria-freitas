@@ -17,19 +17,21 @@ import CategoryController from './app/controllers/CategoryController';
 const routes = new Router();
 const upload = multer(multerConfig);
 
-routes.post('/sessions', SessionController.store);
 
 routes.use(
   cors({
     origin: 'http://localhost:4200',
   })
-);
+  );
+
+routes.post('/sessions', SessionController.store);
 
 // Middlewares
 // routes.use(authMiddlewares);
 
 // Filter Product
 routes.get('/filterproduct', FilterProductController.show);
+routes.get('/filterproductid', FilterProductController.get);
 
 // Filter Category
 routes.get('/filtercategory', FilterCategoryController.show);
