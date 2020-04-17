@@ -1,5 +1,4 @@
 import Sequelize, { Model } from 'sequelize';
-import bcrypt from 'bcryptjs';
 
 class Address extends Model {
   static init(sequelize) {
@@ -7,7 +6,7 @@ class Address extends Model {
       {
         cep: Sequelize.STRING,
         address: Sequelize.STRING,
-        district: Sequelize.VIRTUAL,
+        district: Sequelize.STRING,
         city: Sequelize.STRING,
         public_place: Sequelize.STRING,
         number: Sequelize.STRING,
@@ -23,7 +22,7 @@ class Address extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
+    this.belongsTo(models.File, { foreignKey: 'state_id', as: 'states' });
   }
 }
 

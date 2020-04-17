@@ -12,6 +12,9 @@ import FilterCategoryController from './app/controllers/FilterCategoryController
 import FileController from './app/controllers/FileController';
 import ClientController from './app/controllers/ClientController';
 import CategoryController from './app/controllers/CategoryController';
+import StateController from './app/controllers/StateController';
+import PromotionController from './app/controllers/PromotionController';
+import AddressController from './app/controllers/AddressController';
 // import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
@@ -35,6 +38,9 @@ routes.get('/filterproductid', FilterProductController.get);
 
 // Filter Category
 routes.get('/filtercategory', FilterCategoryController.show);
+
+// State
+routes.get('/states', StateController.get);
 
 // Clients
 routes.post('/clients', ClientController.store);
@@ -65,6 +71,16 @@ routes.get('/news', NewsController.get);
 routes.post('/stock', StockController.store);
 routes.put('/stock/:id', StockController.update);
 routes.get('/stock', StockController.get);
+
+// Promotion
+routes.post('/promotions', PromotionController.store);
+routes.put('/promotions/:id', PromotionController.update);
+routes.get('/promotions', PromotionController.get);
+
+// Address
+routes.post('/address', AddressController.store);
+routes.put('/address/:id', AddressController.update);
+routes.get('/address', AddressController.get);
 
 // Files
 routes.post('/files', upload.single('file'), FileController.store);

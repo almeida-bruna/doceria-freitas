@@ -1,25 +1,25 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/User';
+import Client from '../models/Client';
 import authConfig from '../../config/Auth';
 
 class SessionController {
   async store(req, res) {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ where: { email } });
+    const client = await Client.findOne({ where: { email } });
 
-    if (!user) {
-      return res.status(401).json({ error: 'User not found' });
+    if (!client) {
+      return res.status(401).json({ error: 'Client not found' });
     }
-
-    if (!(await user.checkPassword(password))) {
+    
+    if (!(await client.checkPassword(password))) {
       return res.status(401).json({ error: 'Password does not match' });
     }
 
-    const { id, name } = user;
+    const { id, name } = client;
 
     return res.json({
-      user: {
+      client: {
         id,
         name,
         email

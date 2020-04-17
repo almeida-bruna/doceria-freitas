@@ -22,9 +22,9 @@ class Client extends Model {
       }
     );
 
-    this.addHook('beforeSave', async user => {
-      if (user.password) {
-        Client.password_hash = await bcrypt.hash(user.password, 8);
+    this.addHook('beforeSave', async client => {
+      if (client.password) {
+        client.password_hash = await bcrypt.hash(client.password, 8);
       }
     });
 
@@ -33,6 +33,7 @@ class Client extends Model {
 
   static associate(models) {
     this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
+    this.belongsTo(models.Address, { foreignKey: 'address_id', as: 'address' });
   }
 
   checkPassword(password) {

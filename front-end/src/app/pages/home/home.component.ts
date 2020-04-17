@@ -60,9 +60,9 @@ export class HomeComponent implements OnInit {
 
     let params = { "name": searchValue };
 
-    this.results = this.http.get(this.search_url, { params } )
+    this.product = this.http.get(this.search_url, { params } )
 
-    console.log(this.results);
+    console.log(this.product);
   }
 
 }
