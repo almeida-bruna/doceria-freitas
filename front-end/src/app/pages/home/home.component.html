@@ -19,7 +19,7 @@
               <div class="card-body">
                   <h5 class="card-title">{{ p.name }} {{ p.unity}}</h5>
                   <p class="card-text">R$ {{ p.price }}</p>
-                  <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
+                  <a (click)="openModalCarrinho()" (click)="addCart(p)" class="btn btn-primary">Comprar</a>
               </div>
           </div>
         </div>

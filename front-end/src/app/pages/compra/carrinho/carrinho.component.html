@@ -20,19 +20,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let p of produtos" class="line">
-                <th><img class="img-table" src="../../../../assets/img/{{ p.imagem }}" alt="bala"></th>
-                <td>{{ p.nome }}</td>
-                <td>{{ p.quant }}</td>
-                <td>{{ p.preco }}</td>
+              <tr *ngFor="let p of items()" class="line">
+                <th><img class="img-table" src="{{ p.avatar.url }}" alt="bala"></th>
+                <td>{{ p.name }}</td>
+                <td>{{ p.unity }}</td>
+                <td>{{ p.price }}</td>
                 <td>{{ p.total }}</td>
+                <span class="remove-item" (click)="removeItem(p)">x</span>
               </tr>
             </tbody>
           </table>
       </div>
       <!--Footer-->
       <div class="modal-footer">
-        <h6 class="text-left">Total: R$51,00</h6>
+        <h6 class="text-left">ou {{total() | currency: 'BRL': true}} à vista</h6>
         <button type="button" class="btn btn-primary" (click)="activeModal.dismiss('Cross click')">Continuar Comprando</button>
         <button type="button" class="btn btn-success" routerLink="/resumo-pedido">Finalizar compra</button>
       </div>

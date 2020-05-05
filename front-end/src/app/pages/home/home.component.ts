@@ -4,6 +4,9 @@ import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs/operators';
+import {default as NProgress} from 'nprogress'
+import {CartService} from '../compra/carrinho/carrinho.service'
+import {Product} from './home.model';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +22,8 @@ export class HomeComponent implements OnInit {
   results: any;
   product: any;
 
-  constructor(private http:HttpClient, private modalService: NgbModal) {
+  products : Product[]
+  constructor(private http:HttpClient, private modalService: NgbModal, private cartService: CartService) {
 
   }
 
@@ -53,6 +57,15 @@ export class HomeComponent implements OnInit {
 
   openModalCarrinho() {
     this.modalService.open(CarrinhoComponent)
+  }
+
+  addCart(Product){
+    console.log('a');
+    console.log(Product);
+
+    NProgress.start()
+    this.cartService.addItem(Product)
+    NProgress.done()
   }
 
   onSearch() {
