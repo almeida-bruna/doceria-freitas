@@ -58,16 +58,8 @@ export class CarrinhoComponent implements OnInit {
 
   }
 
-  total() :number{
+  total(){
     return this.cartService.total()
-  }
-
-  totalIns() :number{
-    return this.cartService.totalIns()
-  }
-
-  installments(){
-    return this.cartService.installment()
   }
 
 }

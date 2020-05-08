@@ -14,9 +14,31 @@ export class CartService {
     constructor(){}
 
     items: Product[] = []
+    totl: String = "0";
 
     addItem(item:Product){
-        this.items.push(item)
+
+
+      if (this.items.length === 0){
+        item.count = 1;
+        this.items.push(item);
+      } else {
+        var repeat = false;
+        for(var i = 0; i< this.items.length; i++){
+          if(this.items[i].id === item.id){
+            repeat = true;
+            this.items[i].count +=1;
+          }
+        }
+        if (!repeat) {
+          item.count = 1;
+           this.items.push(item);
+        }
+      }
+
+        console.log(item);
+
+
         sessionStorage.setItem("cart",JSON.stringify(this.items))
     }
 
@@ -26,21 +48,31 @@ export class CartService {
         sessionStorage.setItem("cart",JSON.stringify(this.items))
     }
 
-    total() :number{
-        return this.items
-        .map(item => item.price.value)
-        .reduce((prev, value)=> prev+value, 0)
-    }
-    totalIns():number{
-         return this.items
-        .map(item => item.price.installmentValue)
-        .reduce((prev, value)=> prev+value, 0)
-    }
-    installment():number{
-        return Math.max.apply(
-            Math,this.items
-            .map(function(prod){
-            return prod.price.installments;
-        }))
+
+    total() {
+
+      for (var value of this.items.values()) {
+
+
+        var as = parseInt(value.price)
+        var ab = value.count
+        var res = as * ab
+      }
+
+      var a = this.items.map(item => item.price)
+
+      console.log('vvvvvvvv');
+      console.log(a);
+
+
+
+
+      // for(i = 0; i < this.items.length; i++){
+      //   s = s + parseInt(this.items[i].price);
+      // }
+
+      // return s
+
+
     }
 }

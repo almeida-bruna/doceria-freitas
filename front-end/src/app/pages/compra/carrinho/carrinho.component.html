@@ -23,9 +23,10 @@
               <tr *ngFor="let p of items()" class="line">
                 <th><img class="img-table" src="{{ p.avatar.url }}" alt="bala"></th>
                 <td>{{ p.name }}</td>
-                <td>{{ p.unity }}</td>
+                <td>{{p.count}}</td>
                 <td>{{ p.price }}</td>
                 <td>{{ p.total }}</td>
+                <!-- <input type="number" [(ngModel)]="p.count" min="0" (ngModelChange)="addItem(p)"/> -->
                 <span class="remove-item" (click)="removeItem(p)">x</span>
               </tr>
             </tbody>
@@ -33,9 +34,9 @@
       </div>
       <!--Footer-->
       <div class="modal-footer">
-        <h6 class="text-left">ou {{total() | currency: 'BRL': true}} à vista</h6>
+        <h6 class="text-left">ou {{total()}} à vista</h6>
         <button type="button" class="btn btn-primary" (click)="activeModal.dismiss('Cross click')">Continuar Comprando</button>
-        <button type="button" class="btn btn-success" routerLink="/resumo-pedido">Finalizar compra</button>
+        <button type="button" class="btn btn-success" (click)="activeModal.dismiss('Cross click')" routerLink="/resumo-pedido">Finalizar compra</button>
       </div>
     </div>
     <!--/.Content-->

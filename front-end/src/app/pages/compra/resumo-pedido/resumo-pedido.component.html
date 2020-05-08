@@ -14,11 +14,11 @@
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of produtos" class="line">
-                    <th><img class="img-table" src="../../../../assets/img/{{ p.imagem }}" alt="bala"></th>
-                    <td>{{ p.nome }}</td>
-                    <td>{{ p.quant }}</td>
-                    <td>{{ p.preco }}</td>
+                <tr *ngFor="let p of items()" class="line">
+                    <th><img class="img-table" src="{{ p.avatar.url }}" alt="bala"></th>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.count }}</td>
+                    <td>{{ p.price }}</td>
                     <td>{{ p.total }}</td>
                   </tr>
             </tbody>
