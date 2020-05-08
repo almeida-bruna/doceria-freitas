@@ -18,13 +18,13 @@
                     <th><img class="img-table" src="{{ p.avatar.url }}" alt="bala"></th>
                     <td>{{ p.name }}</td>
                     <td>{{ p.count }}</td>
-                    <td>{{ p.price }}</td>
-                    <td>{{ p.total }}</td>
+                    <td>{{ p.price | currency: 'BRL': true  }}</td>
+                    <td>{{ p.price * p.count | currency: 'BRL': true  }}</td>
                   </tr>
             </tbody>
           </table>
           <div class="content-total">
-              <div class="content-line">Subtotal: R$ 51,00</div>
+              <div class="content-line">Subtotal: {{total() | currency: 'BRL': true}}</div>
               <div class="content-line">Frete: R$ 10,00</div>
               <div class="content-line">Total: R$ 61,00</div>
           </div>

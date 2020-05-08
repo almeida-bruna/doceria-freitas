@@ -4,6 +4,6 @@ export interface Product {
 	name: string,
   images: string[],
   count: number,
-	price: number
+	price: string
 
 }

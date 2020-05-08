@@ -47,4 +47,8 @@ export class ResumoPedidoComponent implements OnInit {
     return this.cartService.items;
   }
 
+  total(){
+    return this.cartService.total()
+  }
+
 }

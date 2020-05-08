@@ -51,28 +51,18 @@ export class CartService {
 
     total() {
 
-      for (var value of this.items.values()) {
-
-
-        var as = parseInt(value.price)
-        var ab = value.count
-        var res = as * ab
+      var total = 0;
+      for(var i = 0; i < this.items.length; i++){
+          var p = this.items[i];
+          total += (parseFloat(p.price) * p.count);
       }
 
-      var a = this.items.map(item => item.price)
-
-      console.log('vvvvvvvv');
-      console.log(a);
-
-
-
-
-      // for(i = 0; i < this.items.length; i++){
-      //   s = s + parseInt(this.items[i].price);
-      // }
-
-      // return s
-
+      if (total === 0 ) {
+        total = 0
+        return total
+      }else {
+        return total;
+      }
 
     }
 }

@@ -18,7 +18,7 @@
               <a class="content-img" href="#" routerLink="/produto/{{p.id}}" routerLinkActive="active"><img class="card-img-top" src="{{ p.avatar.url }}" alt="Card image cap"></a>
               <div class="card-body">
                   <h5 class="card-title">{{ p.name }} {{ p.unity}}</h5>
-                  <p class="card-text">R$ {{ p.price }}</p>
+                  <p class="card-text">{{ p.price | currency: 'BRL': true }}</p>
                   <a (click)="openModalCarrinho()" (click)="addCart(p)" class="btn btn-primary">Comprar</a>
               </div>
           </div>
