@@ -3,10 +3,16 @@
         <div class="content-title">
             <img class="icon-box" src="../../../../assets/icons/dinheiro.png" alt="">Finalizar Pedido
         </div>
-        <h2>Para finalizar a compra, informe seu e-mail</h2>
-        <div class="form-email">
-            <input type="email" class="form-control" placeholder="Seu@email.com">
-            <button routerLink="/forma-pagamento" type="submit" class="btn btn-primary">Continuar</button>
+        <h2>Para finalizar a compra, realize o login!</h2>
+        <div class="login-page">
+          <div class="form">
+            <form class="login-form">
+              <input type="text" placeholder="Email" [formControl]="formLoginEmail"/>
+              <input type="password" placeholder="Senha" [formControl]="formLoginPassword"/>
+              <button (click)="onLogin()">Entrar</button>
+              <p class="message">Não é cadastrado? <a href="#" routerLink="/cadastro">Cadastre-se</a></p>
+            </form>
+          </div>
         </div>
     </div>
 </main>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from '../carrinho/carrinho.service'
 import {Product} from '../../home/home.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resumo-pedido',
@@ -32,7 +33,7 @@ export class ResumoPedidoComponent implements OnInit {
   //   }
   // ]
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit() {
     //sessionStorage.removeItem("cart")
@@ -40,6 +41,16 @@ export class ResumoPedidoComponent implements OnInit {
     //carrinho não está vazio
     if(cartSession != null){
       this.cartService.items = JSON.parse(cartSession);
+    }
+  }
+
+  validaSession() {
+    let id = sessionStorage.getItem('id')
+
+    if(id) {
+      this.router.navigate(['forma-pagamento']);
+    } else {
+      this.router.navigate(['confirma-email']);
     }
   }
 

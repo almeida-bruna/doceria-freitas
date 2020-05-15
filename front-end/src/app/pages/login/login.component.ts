@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         this.results = res;
         console.log(this.results);
         alert('Logou');
+        sessionStorage.setItem('id', this.results.client.id)
         localStorage.setItem ('token', this.results.token);
       },
       (err: HttpErrorResponse) => {

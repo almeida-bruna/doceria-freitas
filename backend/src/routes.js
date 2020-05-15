@@ -15,7 +15,8 @@ import CategoryController from './app/controllers/CategoryController';
 import StateController from './app/controllers/StateController';
 import PromotionController from './app/controllers/PromotionController';
 import AddressController from './app/controllers/AddressController';
-// import authMiddlewares from './app/middlewares/auth';
+import FilterClientController from './app/controllers/FilterClientController';
+import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -29,15 +30,15 @@ routes.use(
 
 routes.post('/sessions', SessionController.store);
 
-// Middlewares
-// routes.use(authMiddlewares);
-
 // Filter Product
 routes.get('/filterproduct', FilterProductController.show);
 routes.get('/filterproductid', FilterProductController.get);
 
 // Filter Category
 routes.get('/filtercategory', FilterCategoryController.show);
+
+// Filter Client
+routes.get('/filterclientid', FilterClientController.get);
 
 // State
 routes.get('/states', StateController.get);
@@ -47,6 +48,17 @@ routes.post('/clients', ClientController.store);
 routes.put('/clients/:id', ClientController.update);
 routes.get('/clients', ClientController.get);
 
+// Address
+routes.post('/address', AddressController.store);
+routes.put('/address/:id', AddressController.update);
+routes.get('/address', AddressController.get);
+
+
+routes.get('/product', ProductController.get);
+
+// Middlewares
+routes.use(authMiddlewares);
+
 // Users
 routes.post('/users', UserController.store);
 routes.put('/users/:id', UserController.update);
@@ -55,7 +67,7 @@ routes.get('/users', UserController.get);
 // Product
 routes.post('/product', ProductController.store);
 routes.put('/product/:id', ProductController.update);
-routes.get('/product', ProductController.get);
+
 
 // Category
 routes.post('/category', CategoryController.store);
@@ -77,10 +89,6 @@ routes.post('/promotions', PromotionController.store);
 routes.put('/promotions/:id', PromotionController.update);
 routes.get('/promotions', PromotionController.get);
 
-// Address
-routes.post('/address', AddressController.store);
-routes.put('/address/:id', AddressController.update);
-routes.get('/address', AddressController.get);
 
 // Files
 routes.post('/files', upload.single('file'), FileController.store);
