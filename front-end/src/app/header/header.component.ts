@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   list_url = 'http://localhost:3333/filterclientid';
 
   results: any;
+  item: any;
 
   constructor(private modalService: NgbModal, private http:HttpClient) { }
 
@@ -28,10 +29,8 @@ export class HeaderComponent implements OnInit {
     let clientId = {"id": sessionStorage.getItem('id')};
 
     if (clientId) {
-      this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
-      console.log(this.results)
-    }
-
+        this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
+      }
 
   }
 

@@ -16,6 +16,10 @@ class App {
       '/files',
       express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
     );
+    this.server.use(
+      '/boleto',
+      express.static(path.resolve(__dirname, '..', 'tmp', 'boletos'))
+    );
   }
 
   routes() {

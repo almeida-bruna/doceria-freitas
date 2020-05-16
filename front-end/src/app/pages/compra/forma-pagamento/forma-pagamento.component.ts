@@ -11,6 +11,7 @@ import {CartService} from '../carrinho/carrinho.service'
 export class FormaPagamentoComponent implements OnInit {
 
   list_url = 'http://localhost:3333/filterclientid';
+  boleto = 'http://localhost:3333/boleto';
 
   results: any;
 
@@ -55,6 +56,28 @@ export class FormaPagamentoComponent implements OnInit {
 
     console.log(this.results);
   }
+
+  gerarboleto() {
+    let prod = this.cartService.total()
+
+    let params = {"price": prod};
+
+   this.http.post(this.boleto, params ).subscribe(
+      res => {
+        this.results = res;
+        console.log(this.results);
+        // alert('Logou');
+
+      },
+      (err: HttpErrorResponse) => {
+        // alert(JSON.stringify(err.error.error));
+        console.log(err.name);
+        console.log(err.message);
+        console.log(err.status);
+      },
+      );
+  }
+
 
   items(): Product[] {
     return this.cartService.items;

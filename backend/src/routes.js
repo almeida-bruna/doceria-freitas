@@ -16,6 +16,7 @@ import StateController from './app/controllers/StateController';
 import PromotionController from './app/controllers/PromotionController';
 import AddressController from './app/controllers/AddressController';
 import FilterClientController from './app/controllers/FilterClientController';
+import BoletoController from './app/controllers/BoletoController';
 import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
@@ -42,6 +43,9 @@ routes.get('/filterclientid', FilterClientController.get);
 
 // State
 routes.get('/states', StateController.get);
+
+// State
+routes.post('/boleto', BoletoController.store);
 
 // Clients
 routes.post('/clients', ClientController.store);
