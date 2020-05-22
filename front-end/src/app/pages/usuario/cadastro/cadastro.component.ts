@@ -10,7 +10,22 @@ import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/htt
 export class CadastroComponent implements OnInit {
   formLoginEmail = new FormControl;
 
-  cadastro = 'http://localhost:3333/clients';
+  formName = new FormControl;
+  formEmail = new FormControl;
+  formPassword = new FormControl;
+  formCellPhone = new FormControl;
+  formCpf = new FormControl;
+  formDtNasc = new FormControl;
+  formSex = new FormControl;
+  formCep = new FormControl;
+  formAddress = new FormControl;
+  formNumber = new FormControl;
+  formComplement = new FormControl;
+  formDistrict = new FormControl;
+  formCity = new FormControl;
+  formState = new FormControl;
+
+  url_client = 'http://localhost:1337/clients';
 
   constructor(private http:HttpClient) { }
 
@@ -19,7 +34,37 @@ export class CadastroComponent implements OnInit {
 
   onRegister() {
 
-    console.log(this.formLoginEmail.value);
+    let bory_client = {
+      name: this.formName.value,
+      email: this.formEmail.value,
+      password_hash: this.formPassword.value,
+      cell_phone: this.formCellPhone.value,
+      cpf: this.formCpf.value,
+      dt_nasc: this.formDtNasc.value,
+      sex: this.formSex.value,
+      cep: this.formCep.value,
+      address: this.formAddress.value,
+      number: this.formNumber.value,
+      complement: this.formComplement.value,
+      district: this.formDistrict.value,
+      city: this.formCity.value,
+      state: this.formState.value
+    }
+
+    let params = bory_client
+    let res: any
+
+    let teste = this.http.post<any>(this.url_client, params).subscribe(
+      data => {
+        res = data.id;
+        alert("Cadastrou com sucesso")
+      },
+      (err: HttpErrorResponse) => {
+        alert("emial ja existe")
+      }
+    )
+    console.log(teste)
+
     
   //   let loginValue = {
   //     email: this.formLoginEmail.value,
