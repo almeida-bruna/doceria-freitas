@@ -9,13 +9,13 @@ class ClientController {
       return res.status(400).json({ error: 'Clients already exists' });
     }
 
-    const { id, name, email, telephone, type } = await Client.create(req.body);
+    const { id, name, email, type } = await Client.create(req.body);
 
     return res.json({
       id,
       name,
       email,
-      telephone,
+      // telephone,
       type,
     });
   }
@@ -37,13 +37,13 @@ class ClientController {
       }
     }
 
-    const { id, name, email, telephone, type } = await client.update(req.body);
+    const { id, name, email, type } = await client.update(req.body);
 
     return res.json({
       id,
       name,
       email,
-      telephone,
+      // telephone,
       type,
     });
   }

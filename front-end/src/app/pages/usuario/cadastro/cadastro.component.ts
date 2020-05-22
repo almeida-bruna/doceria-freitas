@@ -9,7 +9,6 @@ import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/htt
 })
 export class CadastroComponent implements OnInit {
   formLoginEmail = new FormControl;
-
   formName = new FormControl;
   formEmail = new FormControl;
   formPassword = new FormControl;
