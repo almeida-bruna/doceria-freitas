@@ -14,44 +14,17 @@
             <td>{{r.name}}</td>
         </div>
         <div class="content-produto">
-          <div *ngFor="let p of product | async" class="card" style="width: 18rem;">
-              <a class="content-img" href="#" routerLink="/produto/{{p.id}}" routerLinkActive="active"><img class="card-img-top" src="{{ p.avatar.url }}" alt="Card image cap"></a>
-              <div class="card-body">
-                  <h5 class="card-title">{{ p.name }} {{ p.unity}}</h5>
-                  <p class="card-text">{{ p.price | currency: 'BRL': true }}</p>
-                  <a (click)="openModalCarrinho()" (click)="addCart(p)" class="btn btn-primary">Comprar</a>
-              </div>
-          </div>
+            <div class="content-card">
+                <div *ngFor="let p of product | async" class="card" style="width: 30% !important; float: left; margin-right: 3%; margin-top: 15px;">
+                    <a class="content-img" href="#" routerLink="/produto/{{p.id}}" routerLinkActive="active"><img
+                            class="card-img-top" src="{{ p.avatar.url }}" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }} {{ p.unity}}</h5>
+                        <p class="card-text">{{ p.price | currency: 'BRL': true }}</p>
+                        <a (click)="openModalCarrinho()" (click)="addCart(p)" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- <div class="content-produto">
-            <div *ngFor="let p of product | async" class="card" style="width: 18rem;">
-                <a class="content-img" href="#" routerLink="/produto" routerLinkActive="active"><img class="card-img-top" src="{{ p.avatar.url }}" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{ p.name }} {{ p.quantidade}}</h5>
-                    <p class="card-text">R$ {{ p.price }}</p>
-                    <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div class="content-produto">
-            <div *ngFor="let p of produto" class="card" style="width: 18rem;">
-                <a class="content-img" href="#" routerLink="/produto" routerLinkActive="active"><img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
-                    <p class="card-text">R$ {{ p.valor }}</p>
-                    <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div class="content-produto">
-            <div *ngFor="let p of produto" class="card" style="width: 18rem;">
-                <a class="content-img" href="#" routerLink="/produto" routerLinkActive="active"><img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
-                    <p class="card-text">R$ {{ p.valor }}</p>
-                    <a (click)="openModalCarrinho()" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div> -->
     </div>
 </main>

@@ -40,12 +40,24 @@ main {
     height: 100%;
 }
 .content-produto{
-    width: 100%;
+    max-width: 100%;
     height: auto;
     margin: auto;
-    display: flex;
-    justify-content: space-around;
     margin-top: 35px;
+    padding-left: 35px;
+}
+.content-card{
+    width: auto;
+    min-height: 700px;
+    height: auto;
+}
+.teste-card{
+    width: 330px;
+    height: 150px;
+    background-color: #fff;
+    float: left;
+    margin-right: 2px;
+    margin-top: 10px;
 }
 .content-img{
     display: block;
