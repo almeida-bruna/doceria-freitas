@@ -49,7 +49,7 @@ import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pa
     NgbModule,
     NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [ HomeComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

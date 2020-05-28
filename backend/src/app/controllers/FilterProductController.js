@@ -13,6 +13,13 @@ class FilterProductController {
           [Op.like]: `%${product.name}`,
         },
       },
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['id', 'path', 'url'],
+        },
+      ]
     });
 
     return res.json(products);

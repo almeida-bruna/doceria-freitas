@@ -39,21 +39,24 @@ export class HomeComponent implements OnInit {
   }
 
   addCart(Product){
-    console.log('a');
-    console.log(Product);
-
     NProgress.start()
     this.cartService.addItem(Product)
     NProgress.done()
   }
 
-  onSearch() {
-    let searchValue = this.searchProduct.value;
+  onSearch(textSearch = null) {
+    this.product = [];
 
+    if (this.searchProduct.value) {
+      var searchValue = this.searchProduct.value;
+    } else {
+      var searchValue = textSearch;
+    }
+    
     let params = { "name": searchValue };
 
     this.product = this.http.get(this.search_url, { params } )
-
+    
     console.log(this.product);
   }
 

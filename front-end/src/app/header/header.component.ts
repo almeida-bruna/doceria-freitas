@@ -1,3 +1,4 @@
+import { HomeComponent } from './../pages/home/home.component';
 import { CarrinhoComponent } from './../pages/compra/carrinho/carrinho.component';
 import { LoginComponent } from './../pages/login/login.component';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   results: any;
   item: any;
 
-  constructor(private modalService: NgbModal, private http:HttpClient) { }
+  constructor(private modalService: NgbModal, private http:HttpClient, private home:HomeComponent) { }
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -40,6 +41,11 @@ export class HeaderComponent implements OnInit {
 
   openModalCarrinho() {
     this.modalService.open(CarrinhoComponent)
+  }
+
+  searchProduct(category) {
+    console.log("ola")
+    this.home.onSearch(category)
   }
 
 }
