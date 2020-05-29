@@ -2,7 +2,6 @@
 main {
     width: 100%;
     height: auto;
-    background-color: #ea786b;
     padding-bottom: 30px;
 }
 .content-main {
@@ -11,14 +10,11 @@ main {
     margin: auto;
     padding-top: 30px;
     padding-bottom: 100px;
-    background-color: #fff;
-    border-top: solid 1px #ea786b;
 }
 .content-title{
     width: 230px;
     height: 50px;
     background-color: #e22d4b;
-    border-radius: 30px;
     font-size: 20px;
     color: #fff;
     font-weight: 500;
@@ -30,7 +26,7 @@ main {
 }
 h2{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .login-page {
@@ -43,7 +39,7 @@ h2{
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto 10px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);

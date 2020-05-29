@@ -3,13 +3,21 @@
         <img src="{{p.avatar.url}}" alt="">
     </div>
     <div class="informe-produto">
+        <div class="content-avaliable">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <p>Avalie!</p>
+        </div>
         <div class="title-produto">
             <h2>{{ p.name }} {{ p.quantidade}}</h2>
         </div>
+        <br>
         <div class="content-info">
             <p>{{p.description}}</p>
-            <br>
-            <div class="valor-antigo">De: <strong>R$ {{p.price}}</strong></div><br>
+            <div class="valor-antigo">De: <strong>R$ {{p.price}}</strong></div>
             <div style="color: #A7AAAB;">Por:</div>
             <div class="valor-atual">R$ {{p.price}}</div>
             <button routerLink="/resumo-pedido" type="button" class="btn btn-success">Comprar</button>

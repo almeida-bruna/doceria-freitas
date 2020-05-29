@@ -19,11 +19,30 @@
     height: 100%;
     padding: 15px 0px 0px 20px;;
 }
+.content-avaliable{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.content-avaliable i{
+    float: left;
+    color: gold;
+}
+
+.content-avaliable p{
+    font-weight: 600;
+    font-size: 16px;
+    color: royalblue;
+    margin-left: 10px;
+    float: left;
+}
 .title-produto {
+    width: 100%;
+    height: 40px;
     border-bottom: solid 1px #c9bfc1;
 }
 .content-info{
-    width: 100%;
+    width: 70%;
     height: 70px;
 }
 .valor-antigo{
@@ -35,9 +54,7 @@
     font-weight: 900;
     font-size: 40px;
 }
-.content-buttons{
-    width: 100%;
-    height: 50px;
-    background-color: yellow;
-    display: flex;
+.btn{
+    padding: 0.5rem 3rem !important;
+    font-size: 1.5rem !important;
 }

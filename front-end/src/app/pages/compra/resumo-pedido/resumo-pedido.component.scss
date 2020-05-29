@@ -2,7 +2,6 @@
 main {
     width: 100%;
     height: auto;
-    background-color: #ea786b;
     padding-bottom: 30px;
 }
 .content-main {
@@ -11,14 +10,11 @@ main {
     margin: auto;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #fff;
-    border-top: solid 1px #ea786b;
 }
 .content-title{
     width: 230px;
     height: 50px;
     background-color: #e22d4b;
-    border-radius: 30px;
     font-size: 20px;
     color: #fff;
     font-weight: 500;
@@ -52,18 +48,22 @@ h6{
     right: 29px;
 }
 .content-total{
-    width: 70%;
-    margin-top: 80px;
-    margin-left: 30%;
+    width: 26%;
+    margin-top: 40px;
+    margin-left: 74%;
 }
 .content-line{
     width: 100%;
     height: 40px;
-    border-top: solid 2px #f5d03e;
-    text-align: right;
-    padding: 8px 15px 0px 0px
+    border-bottom: solid 1px #C0C0C0;
+}
+.title_summary{
+    text-align: left !important;
+    margin-right: 55%;
 }
 .btn{
-    margin-left: 80%;
-    margin-top: 30px;
+    margin-left: 74.5%;
+    margin-top: 15px;
+    padding: 0.5rem 3rem !important;
+    font-size: 1.5rem !important;
 }
