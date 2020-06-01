@@ -32,7 +32,6 @@ export class CadastroComponent implements OnInit {
   }
 
   onRegister() {
-
     let bory_client = {
       name: this.formName.value,
       email: this.formEmail.value,
@@ -50,6 +49,8 @@ export class CadastroComponent implements OnInit {
       state: this.formState.value
     }
 
+
+
     let params = bory_client
     let res: any
 
@@ -63,29 +64,6 @@ export class CadastroComponent implements OnInit {
       }
     )
     console.log(teste)
-
-    
-  //   let loginValue = {
-  //     email: this.formLoginEmail.value,
-  //     password: this.formLoginPassword.value
-  //   }
-
-  //   let params = loginValue;
-
-  //  this.http.post(this.login, params ).subscribe(
-  //     res => {
-  //       this.results = res;
-  //       console.log(this.results);
-  //       alert('Logou');
-  //       localStorage.setItem ('token', this.results.token);
-  //     },
-  //     (err: HttpErrorResponse) => {
-  //       alert(JSON.stringify(err.error.error));
-  //       console.log(err.name);
-  //       console.log(err.message);
-  //       console.log(err.status);
-  //     },
-  //     );
   }
 
 }

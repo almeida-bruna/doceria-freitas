@@ -2,33 +2,32 @@
     <div class="content-main">
         <h1>Promoções</h1>
         <div class="propaganda">
-            <img src="../../../assets/img/promocao.jpg" alt="">
+            <img src="../../../assets/img/mem.png" alt="logo">
         </div>
         <div class="content-produto">
-            <div *ngFor="let p of produto" class="produto">
-                <img src="../assets/img/{{ p.imagem }}" alt="">
-                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
-                <div class="valor-anterior">{{ p.valor_anterior }}</div>
-                <div class="valor-produto">R$ {{ p.valor }}</div>
-                <button type="button" class="btn btn-success">Comprar</button>
+            <div *ngFor="let p of produto" class="card">
+                <a class="content-img" href="#" routerLinkActive="active">
+                    <img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
+                    <div class="valor-anterior">{{ p.valor_anterior }}</div>
+                    <p class="card-text">R$ {{ p.valor }}</p>
+                    <a (click)="openModalCarrinho()" (click)="addCart(p)" class="btn btn-primary">Comprar</a>
+                </div>
             </div>
         </div>
         <div class="content-produto">
-            <div *ngFor="let p of produto" class="produto">
-                <img src="../assets/img/{{ p.imagem }}" alt="">
-                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
-                <div class="valor-anterior">{{ p.valor_anterior }}</div>
-                <div class="valor-produto">R$ {{ p.valor }}</div>
-                <button type="button" class="btn btn-success">Comprar</button>
-            </div>
-        </div>
-        <div class="content-produto">
-            <div *ngFor="let p of produto" class="produto">
-                <img src="../assets/img/{{ p.imagem }}" alt="">
-                <div class="text-produto">{{ p.nome }} {{ p.quantidade}}</div>
-                <div class="valor-anterior">{{ p.valor_anterior }}</div>
-                <div class="valor-produto">R$ {{ p.valor }}</div>
-                <button type="button" class="btn btn-success">Comprar</button>
+            <div *ngFor="let p of produto" class="card">
+                <a class="content-img" href="#" routerLinkActive="active">
+                    <img class="card-img-top" src="../assets/img/{{ p.imagem }}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.nome }} {{ p.quantidade}}</h5>
+                    <div class="valor-anterior">{{ p.valor_anterior }}</div>
+                    <p class="card-text">R$ {{ p.valor }}</p>
+                    <a (click)="openModalCarrinho()" (click)="addCart(p)" class="btn btn-primary">Comprar</a>
+                </div>
             </div>
         </div>
     </div>

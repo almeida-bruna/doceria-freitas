@@ -40,32 +40,25 @@ main {
     height: 100%;
 }
 .content-produto{
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    margin-top: 35px;
-    padding-left: 35px;
-}
-.content-card{
-    width: auto;
-    min-height: 700px;
-    height: auto;
-}
-.teste-card{
-    width: 330px;
-    height: 150px;
-    background-color: #fff;
-    float: left;
-    margin-right: 2px;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .content-img{
     display: block;
     width: 70% !important;
     margin: auto;
     height: 170px !important;
+    margin-top: 15px;
+}
+.card{
+    width: 30% !important; 
+    float: left; 
+    margin-right: 3%; 
+    margin-top: 15px;
 }
 .card-body{
+    margin-top: 15px;
     padding: 1.0rem !important;
 }
 .card-img-top{

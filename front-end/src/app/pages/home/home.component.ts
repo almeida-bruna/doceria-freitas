@@ -4,9 +4,9 @@ import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs/operators';
-import {default as NProgress} from 'nprogress'
-import {CartService} from '../compra/carrinho/carrinho.service'
-import {Product} from './home.model';
+import { default as NProgress } from 'nprogress'
+import { CartService } from '../compra/carrinho/carrinho.service'
+import { Product } from './home.model';
 
 @Component({
   selector: 'app-home',
@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
   results: any;
   product: any;
 
-  products : Product[];
-  constructor(private http:HttpClient, private modalService: NgbModal, private cartService: CartService) {
+  products: Product[];
+  constructor(private http: HttpClient, private modalService: NgbModal, private cartService: CartService) {
 
   }
 
@@ -38,25 +38,21 @@ export class HomeComponent implements OnInit {
     this.modalService.open(CarrinhoComponent)
   }
 
-  addCart(Product){
+  addCart(Product) {
     NProgress.start()
     this.cartService.addItem(Product)
     NProgress.done()
   }
 
-  onSearch(textSearch = null) {
+  onSearch() {
     this.product = [];
 
-    if (this.searchProduct.value) {
-      var searchValue = this.searchProduct.value;
-    } else {
-      var searchValue = textSearch;
-    }
-    
+    var searchValue = this.searchProduct.value;
+
     let params = { "name": searchValue };
 
-    this.product = this.http.get(this.search_url, { params } )
-    
+    this.product = this.http.get(this.search_url, { params })
+
     console.log(this.product);
   }
 
