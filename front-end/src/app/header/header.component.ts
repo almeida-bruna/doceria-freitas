@@ -44,8 +44,6 @@ export class HeaderComponent implements OnInit {
   }
 
   searchProduct(category) {
-    console.log("ola")
-    this.home.onSearch(category)
   }
 
 }
