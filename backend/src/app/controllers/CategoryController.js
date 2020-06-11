@@ -42,11 +42,7 @@ class CategoryController {
   }
 
   async get(req, res) {
-    const category = await Category.findAll({
-      where: {
-        disabled: '0',
-      }
-    });
+    const category = await Category.findAll();
 
     return res.json(category);
   }

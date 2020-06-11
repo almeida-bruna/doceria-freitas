@@ -1,5 +1,6 @@
 import Product from '../models/Product';
 import File from '../models/File';
+import Category from '../models/Category';
 
 class ProductController {
   async store(req, res) {
@@ -54,6 +55,11 @@ class ProductController {
           model: File,
           as: 'avatar',
           attributes: ['id', 'path', 'url'],
+        },
+        {
+          model: Category,
+          as: 'categories',
+          attributes: ['id', 'name'],
         },
       ],
     });

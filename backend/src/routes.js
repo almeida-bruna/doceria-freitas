@@ -14,7 +14,6 @@ import ClientController from './app/controllers/ClientController';
 import CategoryController from './app/controllers/CategoryController';
 import StateController from './app/controllers/StateController';
 import PromotionController from './app/controllers/PromotionController';
-import AddressController from './app/controllers/AddressController';
 import FilterClientController from './app/controllers/FilterClientController';
 import BoletoController from './app/controllers/BoletoController';
 import authMiddlewares from './app/middlewares/auth';
@@ -51,12 +50,6 @@ routes.post('/boleto', BoletoController.store);
 routes.post('/clients', ClientController.store);
 routes.put('/clients/:id', ClientController.update);
 routes.get('/clients', ClientController.get);
-
-// Address
-routes.post('/address', AddressController.store);
-routes.put('/address/:id', AddressController.update);
-routes.get('/address', AddressController.get);
-
 
 routes.get('/product', ProductController.get);
 

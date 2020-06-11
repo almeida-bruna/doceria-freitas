@@ -9,13 +9,18 @@ class Client extends Model {
         email: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
-        // telephone: Sequelize.STRING,
         cell_phone: Sequelize.STRING,
         cpf: Sequelize.STRING,
         dt_nasc: Sequelize.STRING,
         sex: Sequelize.STRING,
         type: Sequelize.STRING,
         disabled: Sequelize.STRING,
+        cep: Sequelize.STRING,
+        address: Sequelize.STRING,
+        complement: Sequelize.STRING,
+        district: Sequelize.STRING,
+        city: Sequelize.STRING,
+        state: Sequelize.STRING
       },
       {
         sequelize,
@@ -33,7 +38,6 @@ class Client extends Model {
 
   static associate(models) {
     this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
-    // this.belongsTo(models.Address, { foreignKey: 'address_id', as: 'address' });
   }
 
   checkPassword(password) {

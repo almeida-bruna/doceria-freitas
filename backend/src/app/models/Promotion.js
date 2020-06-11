@@ -4,12 +4,12 @@ class Promotion extends Model {
   static init(sequelize) {
     super.init(
       {
-        old_value: Sequelize.STRING,
-        disabled: Sequelize.STRING,
+        name: Sequelize.STRING,
+        newValue: Sequelize.STRING,
       },
       {
         sequelize,
-      }
+      },
     );
 
     return this;
