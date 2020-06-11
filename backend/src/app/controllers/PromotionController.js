@@ -10,11 +10,12 @@ class PromotionController {
     //   return res.status(400).json({ error: 'Promotion already exists' });
     // }
 
-    const { id, old_value, product_id } = await Promotion.create(req.body);
+    const { id, name, newValue, product_id } = await Promotion.create(req.body);
 
     return res.json({
       id,
-      old_value,
+      name,
+      newValue,
       product_id,
     });
   }
@@ -46,9 +47,6 @@ class PromotionController {
 
   async get(req, res) {
     const promotion = await Promotion.findAll({
-      where: {
-        disabled: '0',
-      },
       include: [
         {
           model: Product,

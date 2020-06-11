@@ -23,10 +23,6 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      disabled: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
     });
   },
 

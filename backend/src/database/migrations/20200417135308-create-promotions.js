@@ -7,16 +7,13 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      old_value: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      product_id: {
-        type: Sequelize.INTEGER,
-        references: { model: 'products', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: true,
+      newValue: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -24,10 +21,6 @@ module.exports = {
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false,
-      },
-      disabled: {
-        type: Sequelize.STRING,
         allowNull: false,
       },
     });

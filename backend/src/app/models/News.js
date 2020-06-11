@@ -6,7 +6,6 @@ class News extends Model {
       {
         name: Sequelize.STRING,
         description: Sequelize.STRING,
-        disabled: Sequelize.STRING,
       },
       {
         sequelize,

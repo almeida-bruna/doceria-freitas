@@ -44,9 +44,6 @@ class NewsController {
 
   async get(req, res) {
     const news = await News.findAll({
-      where: {
-        disabled: '0',
-      },
       include: [
         {
           model: File,
