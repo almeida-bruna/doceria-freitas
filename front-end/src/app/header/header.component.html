@@ -3,7 +3,7 @@
         <a routerLink="/" routerLinkActive="active"><img src="../../assets/img/logo.PNG" alt="logo"></a>
     </div>
     <nav>
-        <a href="#" style="padding: 0px; margin: 0px;" (click)="searchProduct('7 belo')">
+        <a href="#" style="padding: 0px; margin: 0px;">
             <div class="nav-item">
                 <img src="../../assets/icons/snack (2).png" alt="chocolate">
                 <div>Chocolate</div>
@@ -26,13 +26,23 @@
             <div class="text-item">Bomboniere</div>
         </div>
     </nav>
-    <div class="login">
+    <div *ngIf="name === 'Login'" class="login">
         <a href="#" (click)="openModalLogin()">
             <img src="../../assets/icons/user.png" alt="login">
         </a>
         <!-- <div *ngFor="let p of results | async" >{{p.name}}</div> -->
-        <div>Login</div>
+        <div>{{ name }}</div>
     </div>
+    <div *ngIf="name != 'Login'" class="login">
+        <a href="#" (click)="minhaConta()">
+            <img src="../../assets/icons/user.png" alt="login">
+        </a>
+        <div>{{ name }}</div>
+    </div>
+    <ul class="mostrar-conta">
+        <li><a href="#">Meu Perfil</a></li>
+        <li><a href="#">Meus Pedidos</a></li>
+    </ul>
     <div class="shopping_cart">
         <a href="#" (click)="openModalCarrinho()">
             <img src="../../assets/icons/mercado.png" alt="carrinho">

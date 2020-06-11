@@ -21,6 +21,8 @@ import { ProdutoComponent } from './pages/compra/produto/produto.component';
 import { ConfirmaEmailComponent } from './pages/compra/confirma-email/confirma-email.component';
 import { ResumoPedidoComponent } from './pages/compra/resumo-pedido/resumo-pedido.component';
 import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pagamento.component';
+import { PerfilComponent } from './pages/usuario/perfil/perfil.component';
+import { PedidosComponent } from './pages/usuario/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pa
     ProdutoComponent,
     ConfirmaEmailComponent,
     ResumoPedidoComponent,
-    FormaPagamentoComponent
+    FormaPagamentoComponent,
+    PerfilComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,

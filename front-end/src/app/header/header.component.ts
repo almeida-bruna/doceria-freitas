@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
 
   results: any;
   item: any;
+  name: any;
 
   constructor(private modalService: NgbModal, private http:HttpClient, private home:HomeComponent) { }
 
@@ -28,11 +29,18 @@ export class HeaderComponent implements OnInit {
     })
 
     let clientId = {"id": sessionStorage.getItem('id')};
+    let clientName = sessionStorage.getItem('nome');
+    console.log(clientName)
 
     if (clientId) {
-        this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
-      }
+      this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
+    }
 
+    if (clientName) {
+      this.name = clientName;
+    } else {
+      this.name = 'Login'
+    }
   }
 
   openModalLogin() {
@@ -43,7 +51,14 @@ export class HeaderComponent implements OnInit {
     this.modalService.open(CarrinhoComponent)
   }
 
-  searchProduct(category) {
+  minhaConta(){
+    let teste = (<HTMLElement>document.querySelector('.mostrar-conta'));
+
+    if (teste.style.display == 'block'){
+      teste.style.display = 'none'
+    }else{
+      teste.style.display = 'block'
+    }
   }
 
 }
