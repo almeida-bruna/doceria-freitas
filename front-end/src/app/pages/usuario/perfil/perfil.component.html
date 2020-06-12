@@ -1,1 +1,31 @@
-<p>perfil works!</p>
+<main>
+    <u class="content-menu">
+        <a routerLink="/perfil" routerLinkActive="active"><li>Perfil</li></a>
+        <a routerLink="/pedidos" routerLinkActive="active"><li>Pedidos</li></a>
+    </u>
+    <div class="content-main">
+        <div class="content-dados">
+            <h2>Dados Pessoais</h2>
+            Email: <br>
+            Senha: <br>
+
+            Nome: {{nome}} <br>
+            CPF: <br>
+            Celular: <br>
+            Sexo: <br>
+            Data de Nasc: <br>
+        </div>
+        <div class="content-dados">
+            <h2>Endereço</h2>
+            Cep: <br>
+            Endereço: <br>
+            Numero: <br>
+            Complemento: <br>
+            Bairro: <br>
+            Cidade: <br>
+            Estado: <br>
+
+            <button type="button" class="btn btn-success">Alterar Dados</button>
+        </div>
+    </div>
+</main>

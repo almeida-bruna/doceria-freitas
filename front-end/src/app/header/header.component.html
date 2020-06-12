@@ -34,14 +34,14 @@
         <div>{{ name }}</div>
     </div>
     <div *ngIf="name != 'Login'" class="login">
-        <a href="#" (click)="minhaConta()">
+        <a (click)="minhaConta()">
             <img src="../../assets/icons/user.png" alt="login">
         </a>
         <div>{{ name }}</div>
     </div>
     <ul class="mostrar-conta">
-        <li><a href="#">Meu Perfil</a></li>
-        <li><a href="#">Meus Pedidos</a></li>
+        <li><a routerLink="/perfil" routerLinkActive="active" (click)="minhaConta()">Meu Perfil</a></li>
+        <li><a routerLink="/pedidos" routerLinkActive="active" (click)="minhaConta()">Meus Pedidos</a></li>
     </ul>
     <div class="shopping_cart">
         <a href="#" (click)="openModalCarrinho()">

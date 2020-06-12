@@ -1,3 +1,5 @@
+import { PedidosComponent } from './pages/usuario/pedidos/pedidos.component';
+import { PerfilComponent } from './pages/usuario/perfil/perfil.component';
 import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pagamento.component';
 import { ResumoPedidoComponent } from './pages/compra/resumo-pedido/resumo-pedido.component';
 import { ConfirmaEmailComponent } from './pages/compra/confirma-email/confirma-email.component';
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: 'produto/:id', component: ProdutoComponent},
   { path: 'confirma-email', component: ConfirmaEmailComponent},
   { path: 'resumo-pedido', component: ResumoPedidoComponent},
-  { path: 'forma-pagamento', component: FormaPagamentoComponent}
+  { path: 'forma-pagamento', component: FormaPagamentoComponent},
+  { path: 'perfil', component: PerfilComponent},
+  { path: 'pedidos', component: PedidosComponent}
 ];
 
 @NgModule({

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
+  nome: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.nome = sessionStorage.getItem("nome");
   }
 
 }

@@ -23,6 +23,7 @@ import { ResumoPedidoComponent } from './pages/compra/resumo-pedido/resumo-pedid
 import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pagamento.component';
 import { PerfilComponent } from './pages/usuario/perfil/perfil.component';
 import { PedidosComponent } from './pages/usuario/pedidos/pedidos.component';
+import { DetalhesPedidoComponent } from './pages/usuario/detalhes-pedido/detalhes-pedido.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PedidosComponent } from './pages/usuario/pedidos/pedidos.component';
     ResumoPedidoComponent,
     FormaPagamentoComponent,
     PerfilComponent,
-    PedidosComponent
+    PedidosComponent,
+    DetalhesPedidoComponent
   ],
   imports: [
     BrowserModule,
