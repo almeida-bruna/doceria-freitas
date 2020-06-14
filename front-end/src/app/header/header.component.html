@@ -3,28 +3,36 @@
         <a routerLink="/" routerLinkActive="active"><img src="../../assets/img/logo.PNG" alt="logo"></a>
     </div>
     <nav>
-        <a href="#" style="padding: 0px; margin: 0px;">
+        <a style="padding: 0px; margin: 0px;">
             <div class="nav-item">
                 <img src="../../assets/icons/snack (2).png" alt="chocolate">
                 <div>Chocolate</div>
             </div>
         </a>
-        <div class="nav-item">
-            <img src="../../assets/icons/food-and-restaurant.png" alt="doces">
-            <div class="text-item">Doces</div>
-        </div>
-        <div class="nav-item">
-            <img src="../../assets/icons/sugar-cubes.png" alt="doces">
-            <div class="text-item">Atacado</div>
-        </div>
-        <div class="nav-item">
-            <img src="../../assets/icons/cake.png" alt="doces">
-            <div class="text-item">Festa</div>
-        </div>
-        <div class="nav-item">
-            <img src="../../assets/icons/kiosk.png" alt="doces">
-            <div class="text-item">Bomboniere</div>
-        </div>
+        <a style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/food-and-restaurant.png" alt="doces">
+                <div class="text-item">Doces</div>
+            </div>
+        </a>
+        <a style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/sugar-cubes.png" alt="doces">
+                <div class="text-item">Atacado</div>
+            </div>
+        </a>
+        <a style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/cake.png" alt="doces">
+                <div class="text-item">Festa</div>
+            </div>
+        </a>
+        <a style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/kiosk.png" alt="doces">
+                <div class="text-item">Bomboniere</div>
+            </div>
+        </a>
     </nav>
     <div *ngIf="name === 'Login'" class="login">
         <a href="#" (click)="openModalLogin()">

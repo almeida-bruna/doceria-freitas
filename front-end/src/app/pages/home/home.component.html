@@ -1,3 +1,64 @@
+<!-- <app-header></app-header> -->
+<header>
+    <div class="logo">
+        <a routerLink="/" routerLinkActive="active"><img src="../../assets/img/logo.PNG" alt="logo"></a>
+    </div>
+    <nav>
+        <a href="#" (click)="onSearch('chocolate')" style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/snack (2).png" alt="chocolate">
+                <div>Chocolate</div>
+            </div>
+        </a>
+        <a href="#" (click)="onSearch('Bala')" style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/food-and-restaurant.png" alt="doces">
+                <div class="text-item">Doces</div>
+            </div>
+        </a>
+        <a href="#" (click)="onSearch('Atacado')" style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/sugar-cubes.png" alt="doces">
+                <div class="text-item">Atacado</div>
+            </div>
+        </a>
+        <a href="#" (click)="onSearch('Festa')" style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/cake.png" alt="doces">
+                <div class="text-item">Festa</div>
+            </div>
+        </a>
+        <a href="#" (click)="onSearch('Bomboniere')" style="padding: 0px; margin: 0px;">
+            <div class="nav-item">
+                <img src="../../assets/icons/kiosk.png" alt="doces">
+                <div class="text-item">Bomboniere</div>
+            </div>
+        </a>
+    </nav>
+    <div *ngIf="name === 'Login'" class="login">
+        <a href="#" (click)="openModalLogin()">
+            <img src="../../assets/icons/user.png" alt="login">
+        </a>
+        <!-- <div *ngFor="let p of results | async" >{{p.name}}</div> -->
+        <div>{{ name }}</div>
+    </div>
+    <div *ngIf="name != 'Login'" class="login">
+        <a (click)="minhaConta()">
+            <img src="../../assets/icons/user.png" alt="login">
+        </a>
+        <div>{{ name }}</div>
+    </div>
+    <ul class="mostrar-conta">
+        <li><a routerLink="/perfil" routerLinkActive="active" (click)="minhaConta()">Meu Perfil</a></li>
+        <li><a routerLink="/pedidos" routerLinkActive="active" (click)="minhaConta()">Meus Pedidos</a></li>
+    </ul>
+    <div class="shopping_cart">
+        <a href="#" (click)="openModalCarrinho()">
+            <img src="../../assets/icons/mercado.png" alt="carrinho">
+        </a>
+        <div>Carrinho</div>
+    </div>
+</header>
 <main>
     <div class="content-main">
         <div class="content-seashe">
@@ -11,7 +72,7 @@
             <img src="../../../assets/img/novo-banner.webp" alt="banner">
         </div>
         <div *ngFor="let r of results | async">
-            <td>{{r.name}}</td>
+            <!-- <td>{{r.name}}</td> -->
         </div>
         <div class="content-produto">
             <div *ngFor="let p of product | async" class="card">
