@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/http';
 import {Product} from '../../home/home.model';
 import {CartService} from '../carrinho/carrinho.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forma-pagamento',
@@ -10,8 +11,8 @@ import {CartService} from '../carrinho/carrinho.service'
 })
 export class FormaPagamentoComponent implements OnInit {
 
-  list_url = 'http://localhost:3333/filterclientid';
-  boleto = 'http://localhost:3333/boleto';
+  list_url = '/api/filterclientid';
+  boleto = '/api/boleto';
 
   results: any;
 
@@ -32,7 +33,7 @@ export class FormaPagamentoComponent implements OnInit {
   //   }
   // ]
 
-  constructor(private http:HttpClient, private cartService: CartService) { }
+  constructor(private http:HttpClient, private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     //sessionStorage.removeItem("cart")
@@ -65,7 +66,8 @@ export class FormaPagamentoComponent implements OnInit {
    this.http.post(this.boleto, params ).subscribe(
       res => {
         this.results = res;
-        console.log(this.results);
+
+        // console.log(this.results);
         // alert('Logou');
 
       },
@@ -75,7 +77,8 @@ export class FormaPagamentoComponent implements OnInit {
         console.log(err.message);
         console.log(err.status);
       },
-      );
+    );
+    this.router.navigate(['gerar-boleto']);
   }
 
 

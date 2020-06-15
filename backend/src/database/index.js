@@ -9,10 +9,11 @@ import Client from '../app/models/Client';
 import Category from '../app/models/Category';
 import State from '../app/models/State';
 import Promotion from '../app/models/Promotion';
+import Purchase from '../app/models/Purchase';
 
 import databaseConfig from '../config/database';
 
-const models = [User, Product, News, File, Stock, Client, Category, State, Promotion];
+const models = [User, Product, News, File, Stock, Client, Category, State, Promotion, Purchase];
 
 class Database {
   constructor() {

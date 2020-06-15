@@ -13,7 +13,7 @@ export class ConfirmaEmailComponent implements OnInit {
   formLoginEmail = new FormControl;
   formLoginPassword = new FormControl;
 
-  login = 'http://localhost:3333/sessions';
+  login = '/api/sessions';
 
   results: any;
 

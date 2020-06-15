@@ -12,7 +12,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/htt
 })
 export class HeaderComponent implements OnInit {
 
-  list_url = 'http://localhost:3333/filterclientid';
+  list_url = '/api/filterclientid';
 
   results: any;
   item: any;

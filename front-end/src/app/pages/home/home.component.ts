@@ -17,14 +17,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/htt
 export class HomeComponent implements OnInit {
   searchProduct = new FormControl;
 
-  search_url = 'http://localhost:3333/filterproduct';
-  list_url = 'http://localhost:3333/product';
+  search_url = '/api/filterproduct';
+  list_url = '/api/product';
   results: any;
   product: any;
   products: Product[];
 
   // HEADER
-  list_url_cliente = 'http://localhost:3333/filterclientid';
+  list_url_cliente = '/api/filterclientid';
   results_client: any;
   item: any;
   name: any;

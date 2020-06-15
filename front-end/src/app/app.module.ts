@@ -21,6 +21,7 @@ import { ProdutoComponent } from './pages/compra/produto/produto.component';
 import { ConfirmaEmailComponent } from './pages/compra/confirma-email/confirma-email.component';
 import { ResumoPedidoComponent } from './pages/compra/resumo-pedido/resumo-pedido.component';
 import { FormaPagamentoComponent } from './pages/compra/forma-pagamento/forma-pagamento.component';
+import { GerarBoletoComponent } from './pages/compra/gerar-boleto/gerar-boleto.component';
 import { PerfilComponent } from './pages/usuario/perfil/perfil.component';
 import { PedidosComponent } from './pages/usuario/pedidos/pedidos.component';
 import { DetalhesPedidoComponent } from './pages/usuario/detalhes-pedido/detalhes-pedido.component';
@@ -44,7 +45,8 @@ import { DetalhesPedidoComponent } from './pages/usuario/detalhes-pedido/detalhe
     FormaPagamentoComponent,
     PerfilComponent,
     PedidosComponent,
-    DetalhesPedidoComponent
+    DetalhesPedidoComponent,
+    GerarBoletoComponent
   ],
   imports: [
     BrowserModule,
