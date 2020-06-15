@@ -85,8 +85,11 @@ export class HomeComponent implements OnInit {
     console.log(this.product);
   }
 
-  // teste header
+  Submit() {
+    location.reload();
+  }
 
+  // teste header
   openModalLogin() {
     this.modalService.open(LoginComponent)
   }

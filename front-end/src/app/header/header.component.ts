@@ -61,4 +61,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  Submit() {
+    location.reload();
+  }
+
 }
