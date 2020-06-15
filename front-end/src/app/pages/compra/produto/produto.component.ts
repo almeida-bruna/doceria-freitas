@@ -19,7 +19,7 @@ export class ProdutoComponent implements OnInit {
   public productId;
   product: any;
 
-  list_url = 'http://localhost:3333/filterproductid';
+  list_url = '/api/filterproductid';
 
   constructor(private http:HttpClient, private modalService: NgbModal, private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.productId = params['id']);

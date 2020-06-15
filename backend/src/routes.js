@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
-import cors from 'cors';
+// import cors from 'cors';
 import multerConfig from './config/multer';
 import UserController from './app/controllers/UserController';
 import ProductController from './app/controllers/ProductController';
@@ -15,6 +15,7 @@ import CategoryController from './app/controllers/CategoryController';
 import StateController from './app/controllers/StateController';
 import PromotionController from './app/controllers/PromotionController';
 import FilterClientController from './app/controllers/FilterClientController';
+import PurchaseController from './app/controllers/PurchaseController';
 import BoletoController from './app/controllers/BoletoController';
 import authMiddlewares from './app/middlewares/auth';
 
@@ -22,11 +23,11 @@ const routes = new Router();
 const upload = multer(multerConfig);
 
 
-routes.use(
-  cors({
-    origin: 'http://localhost:4200',
-  })
-  );
+// routes.use(
+//   cors({
+//     origin: 'http://localhost:4200',
+//   })
+//   );
 
 routes.post('/sessions', SessionController.store);
 
@@ -45,6 +46,7 @@ routes.get('/states', StateController.get);
 
 // State
 routes.post('/boleto', BoletoController.store);
+routes.get('/boleto', BoletoController.get);
 
 // Clients
 routes.post('/clients', ClientController.store);
@@ -64,6 +66,10 @@ routes.get('/users', UserController.get);
 // Product
 routes.post('/product', ProductController.store);
 routes.put('/product/:id', ProductController.update);
+
+// Purchase
+routes.post('/purchase', PurchaseController.store);
+routes.get('/purchase', PurchaseController.get);
 
 
 // Category

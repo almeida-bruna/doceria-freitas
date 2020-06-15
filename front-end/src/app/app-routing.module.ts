@@ -14,6 +14,7 @@ import { NovidadesComponent } from './pages/novidades/novidades.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SobreAEmpresaComponent } from './pages/sobre-a-empresa/sobre-a-empresa.component';
 import { CadastroComponent } from './pages/usuario/cadastro/cadastro.component';
+import { GerarBoletoComponent } from './pages/compra/gerar-boleto/gerar-boleto.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'resumo-pedido', component: ResumoPedidoComponent},
   { path: 'forma-pagamento', component: FormaPagamentoComponent},
   { path: 'perfil', component: PerfilComponent},
-  { path: 'pedidos', component: PedidosComponent}
+  { path: 'pedidos', component: PedidosComponent},
+  { path: 'gerar-boleto', component: GerarBoletoComponent}
 ];
 
 @NgModule({
