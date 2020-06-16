@@ -17,7 +17,6 @@ class Purchase extends Model {
 
   static associate(models) {
     this.belongsTo(models.Client, { foreignKey: 'client_id', as: 'client' });
-    this.belongsTo(models.Product, { foreignKey: 'product_id', as: 'product' });
   }
 
 }

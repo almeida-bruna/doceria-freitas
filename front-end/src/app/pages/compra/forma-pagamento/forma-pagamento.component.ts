@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/htt
 import {Product} from '../../home/home.model';
 import {CartService} from '../carrinho/carrinho.service'
 import { Router } from '@angular/router';
+var moment = require("moment");
 
 @Component({
   selector: 'app-forma-pagamento',
@@ -13,6 +14,8 @@ export class FormaPagamentoComponent implements OnInit {
 
   list_url = '/api/filterclientid';
   boleto = '/api/boleto';
+  purchase = '/api/purchase'
+  purchase_items = '/api/purchaseitems'
 
   results: any;
 
@@ -43,6 +46,8 @@ export class FormaPagamentoComponent implements OnInit {
       this.cartService.items = JSON.parse(cartSession);
     }
 
+    // console.log(this.cartService.items);
+
 
     const token = localStorage.getItem('token');
 
@@ -55,7 +60,7 @@ export class FormaPagamentoComponent implements OnInit {
 
     this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
 
-    console.log(this.results);
+    // console.log(this.results);
   }
 
   gerarboleto() {
@@ -63,6 +68,8 @@ export class FormaPagamentoComponent implements OnInit {
 
     let params = {"price": prod};
 
+
+  //GERANDO BOLETO
    this.http.post(this.boleto, params ).subscribe(
       res => {
         this.results = res;
@@ -78,7 +85,48 @@ export class FormaPagamentoComponent implements OnInit {
         console.log(err.status);
       },
     );
+
+    //SALVANDO COMPRA
+
+    const token = localStorage.getItem('token');
+
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Authorization', `Bearer ${token}`)
+
+    const clientId = sessionStorage.getItem('id')
+    const horaAtual = moment().format();
+    let dados = {"payment_method": "Boleto", "date": horaAtual, "client_id": clientId};
+
+    console.log(headers);
+
+
+    this.http.post(this.purchase, dados, {headers: headers} ).subscribe(
+      res => {
+        this.results = res;
+
+        const resp = Object.keys(this.cartService.items).map(item => {
+          console.log(this.cartService.items[item].id)
+          console.log(this.cartService.items[item].count)
+          let data = {"qtd": this.cartService.items[item].count, "purchase_id": res.id, "product_id": this.cartService.items[item].id}
+          console.log(data);
+
+          this.http.post(this.purchase_items, data, {headers: headers} ).subscribe(
+            res => {
+              this.results = res;
+            }
+          );
+        });
+
+
+      },
+    );
+
+
+
     this.router.navigate(['gerar-boleto']);
+
+
   }
 
 

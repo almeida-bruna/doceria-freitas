@@ -16,6 +16,7 @@ import StateController from './app/controllers/StateController';
 import PromotionController from './app/controllers/PromotionController';
 import FilterClientController from './app/controllers/FilterClientController';
 import PurchaseController from './app/controllers/PurchaseController';
+import PurchaseItemsController from './app/controllers/PurchaseItemsController';
 import BoletoController from './app/controllers/BoletoController';
 import authMiddlewares from './app/middlewares/auth';
 
@@ -70,6 +71,10 @@ routes.put('/product/:id', ProductController.update);
 // Purchase
 routes.post('/purchase', PurchaseController.store);
 routes.get('/purchase', PurchaseController.get);
+
+// Purchase Items
+routes.post('/purchaseitems', PurchaseItemsController.store);
+routes.get('/purchaseitems', PurchaseItemsController.get);
 
 
 // Category
