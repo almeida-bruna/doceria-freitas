@@ -75,6 +75,8 @@ export class GerarBoletoComponent implements OnInit {
       window.URL.revokeObjectURL(blob);
       link.remove();
     })
+
+    sessionStorage.removeItem('cart');
   }
 
 }
