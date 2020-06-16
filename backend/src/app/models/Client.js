@@ -17,6 +17,7 @@ class Client extends Model {
         disabled: Sequelize.STRING,
         cep: Sequelize.STRING,
         address: Sequelize.STRING,
+        number: Sequelize.STRING,
         complement: Sequelize.STRING,
         district: Sequelize.STRING,
         city: Sequelize.STRING,

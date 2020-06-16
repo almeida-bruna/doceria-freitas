@@ -2,7 +2,7 @@
 main {
     width: 100%;
     height: auto;
-    background-color: #ea786b;
+    background-color: #FFE4C4;
     padding-bottom: 30px;
 }
 .content-main {
@@ -11,42 +11,53 @@ main {
     margin: auto;
     padding-top: 20px;
 }
+i{
+    margin-left: 4%;
+    margin-top: 10px;
+}
 .content-identifica{
-    width: 100%;
-    height: 150px;
+    width: 52%;
+    height: auto;
     border-radius: 5px;
     border: solid 2px #ededed;
     background-color: #fff;
+    border: solid 1px salmon;
+    margin: auto;
 }
 .content-group-identifica{
-    float: left;
-    width: 42%;
-    margin-left: 5%;
+    width: 92%;
+    margin-left: 4%;
 }
-.content-dados{
-    width: 100%;
-    height: 650px;
-    margin-top: 30px;
-}
+// .content-dados{
+//     width: 100%;
+//     height: 650px;
+//     margin-top: 30px;
+// }
 .content-dados-pessoais{
-    width: 48%;
-    height: 560px;
-    float: left;
+    width: 52%;
+    height: auto;
+    // float: left;
     border-radius: 5px;
-    border: solid 2px #ededed;
     background-color: #fff;
+    margin: auto;
+    margin-top: 15px;
+    border: solid 1px salmon;
+    padding-bottom: 15px;
 }
-.content-group-dados-pessoais{
-    margin-left: 100px;
+.item-dados{
+    width: 92%;
+    margin-left: 4%;
 }
 .content-endereco{
-    width: 48%;
-    height: 650px;
-    float: left;
+    width: 52%;
+    height: auto;
+    // float: left;
     border-radius: 5px;
-    border: solid 2px #ededed;
     background-color: #fff;
-    margin-left: 4%;
+    margin: auto;
+    margin-top: 15px;
+    border: solid 1px salmon;
+    padding-bottom: 15px;
 }
 input{
     background-color: #ededed !important;

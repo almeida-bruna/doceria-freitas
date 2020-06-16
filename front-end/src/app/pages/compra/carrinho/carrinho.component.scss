@@ -1,6 +1,18 @@
+.modal-header{
+    width: 600px;
+    background-color: #fff;
+}
+.modal-body{
+    width: 600px;
+    background-color: #fff;
+}
+.modal-footer{
+    width: 600px;
+    background-color: #fff;
+}
 .img-table{
-    width: 85px;
-    height: 80px;
+    width: 75px;
+    height: 70px;
     right: 10px;
     position: relative;
 }
@@ -10,4 +22,15 @@
 h6{
     position: relative;
     right: 29px;
+}
+.name-product{
+    font-size: 15px;
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.material-icons{
+    font-size: 30px !important;
+    color: red !important;
 }

@@ -65,4 +65,9 @@ export class HeaderComponent implements OnInit {
     location.reload();
   }
 
+  exitConta(){
+    sessionStorage.clear();
+    this.Submit();
+    }
+
 }

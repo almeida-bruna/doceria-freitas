@@ -17,14 +17,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/htt
 export class HomeComponent implements OnInit {
   searchProduct = new FormControl;
 
-  search_url = '/api/filterproduct';
-  list_url = '/api/product';
+  search_url = 'api/filterproduct';
+  list_url = 'api/product';
   results: any;
   product: any;
   products: Product[];
 
   // HEADER
-  list_url_cliente = '/api/filterclientid';
+  list_url_cliente = 'api/filterclientid';
   results_client: any;
   item: any;
   name: any;
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
     console.log(clientName)
 
     if (clientId) {
-      this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
+      this.results = this.http.get(this.list_url, { params: clientId, headers: headers });
     }
 
     if (clientName) {
@@ -103,5 +103,10 @@ export class HomeComponent implements OnInit {
       teste.style.display = 'block'
     }
   }
+
+  exitConta(){
+    sessionStorage.clear();
+    this.Submit();
+    }
 
 }

@@ -1,5 +1,5 @@
 <!-- <app-header></app-header> -->
-<header>
+<header id="header">
     <div class="logo">
         <a href="#" (click)="Submit()"><img src="../../assets/img/logo.PNG" alt="logo"></a>
     </div>
@@ -51,6 +51,7 @@
     <ul class="mostrar-conta">
         <li><a routerLink="/perfil" routerLinkActive="active" (click)="minhaConta()">Meu Perfil</a></li>
         <li><a routerLink="/pedidos" routerLinkActive="active" (click)="minhaConta()">Meus Pedidos</a></li>
+        <li><a href="#" (click)="exitConta()">Sair</a></li>
     </ul>
     <div class="shopping_cart">
         <a href="#" (click)="openModalCarrinho()">

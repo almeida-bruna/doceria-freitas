@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('nome', this.results.client.name);
         sessionStorage.setItem('id', this.results.client.id);
         localStorage.setItem ('token', this.results.token);
+        location.reload();
       },
       (err: HttpErrorResponse) => {
         alert(JSON.stringify(err.error.error));

@@ -1,43 +1,41 @@
-<div class="modal-dialog" role="document">
-    <!--Content-->
-    <div class="modal-content form-elegant">
-      <!--Header-->
-      <div class="modal-header text-left">
-        <h3 class="modal-title dark-grey-text font-weight-bold" id="myModalLabel"><strong>Carrinho</strong></h3>
-        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Imagem</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Quant.</th>
-                <th scope="col">Preço</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let p of items()" class="line">
-                <th><img class="img-table" src="{{ p.avatar.url }}" alt="bala"></th>
-                <td>{{ p.name }}</td>
-                <td>{{p.count}}</td>
-                <td>{{ p.price | currency: 'BRL': true }}</td>
-                <td>{{ p.price * p.count | currency: 'BRL': true }}</td>
-                <!-- <input type="number" [(ngModel)]="p.count" min="0" (ngModelChange)="addItem(p)"/> -->
-                <span class="remove-item" (click)="removeItem(p)">x</span>
-              </tr>
-            </tbody>
-          </table>
-      </div>
-      <!--Footer-->
-      <div class="modal-footer">
-        <h6 class="text-left">{{total() | currency: 'BRL': true}}</h6>
-        <button type="button" class="btn btn-primary" (click)="activeModal.dismiss('Cross click')">Continuar Comprando</button>
-        <button type="button" class="btn btn-success" (click)="activeModal.dismiss('Cross click')" routerLink="/resumo-pedido">Finalizar compra</button>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
+<div class="modal-header text-left">
+  <h3 class="modal-title dark-grey-text font-weight-bold" id="myModalLabel"><strong>Carrinho</strong></h3>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Imagem</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Quant.</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Total</th>
+          <th scope="col">Opção</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of items()" class="line">
+          <th><img class="img-table" src="{{ p.avatar.url }}" alt="bala"></th>
+          <td class="name-product">{{ p.name }}</td>
+          <td>{{p.count}}</td>
+          <td>{{ p.price | currency: 'BRL': true }}</td>
+          <td>{{ p.price * p.count | currency: 'BRL': true }}</td>
+          <!-- <input type="number" [(ngModel)]="p.count" min="0" (ngModelChange)="addItem(p)"/> -->
+          <td style="text-align: center;">
+            <a href="#" class="remove-item" (click)="removeItem(p)">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!--Footer-->
+<div class="modal-footer">
+  <h6 class="text-left"><strong>Total: </strong>{{total() | currency: 'BRL': true}}</h6>
+  <button type="button" class="btn btn-primary" (click)="activeModal.dismiss('Cross click')">Continuar Comprando</button>
+  <button type="button" class="btn btn-success" (click)="activeModal.dismiss('Cross click')" routerLink="/resumo-pedido">Finalizar compra</button>
+</div>

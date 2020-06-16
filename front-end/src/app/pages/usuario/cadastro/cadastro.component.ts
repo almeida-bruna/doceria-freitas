@@ -1,6 +1,8 @@
+import { HomeComponent } from './../../home/home.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -24,9 +26,11 @@ export class CadastroComponent implements OnInit {
   formCity = new FormControl;
   formState = new FormControl;
 
-  url_client = 'http://localhost:1337/clients';
+  url_client = '/api/clients';
 
-  constructor(private http:HttpClient) { }
+  route = false;
+
+  constructor(private http:HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +39,7 @@ export class CadastroComponent implements OnInit {
     let bory_client = {
       name: this.formName.value,
       email: this.formEmail.value,
-      password_hash: this.formPassword.value,
+      password: this.formPassword.value,
       cell_phone: this.formCellPhone.value,
       cpf: this.formCpf.value,
       dt_nasc: this.formDtNasc.value,
@@ -49,21 +53,19 @@ export class CadastroComponent implements OnInit {
       state: this.formState.value
     }
 
-
-
     let params = bory_client
     let res: any
 
     let teste = this.http.post<any>(this.url_client, params).subscribe(
       data => {
         res = data.id;
-        alert("Cadastrou com sucesso")
+        alert("Cadastrado com sucesso");
+        this.router.navigate(['/']);
       },
       (err: HttpErrorResponse) => {
         alert("emial ja existe")
       }
     )
-    console.log(teste)
   }
 
 }
