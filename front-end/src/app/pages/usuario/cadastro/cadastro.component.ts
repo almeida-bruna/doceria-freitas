@@ -1,7 +1,7 @@
 import { HomeComponent } from './../../home/home.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,12 +27,23 @@ export class CadastroComponent implements OnInit {
   formState = new FormControl;
 
   url_client = '/api/clients';
+  url_state = '/api/states';
+
+  states: any;
 
   route = false;
 
   constructor(private http:HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    const token = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
+
+    this.states = this.http.get(this.url_state);
   }
 
   onRegister() {

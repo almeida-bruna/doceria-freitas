@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
       res => {
         this.results = res;
         console.log(this.results);
-        alert('Logou');
         sessionStorage.setItem('nome', this.results.client.name);
         sessionStorage.setItem('id', this.results.client.id);
         localStorage.setItem ('token', this.results.token);
