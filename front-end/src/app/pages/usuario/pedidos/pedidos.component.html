@@ -21,7 +21,7 @@
             <tbody>
                 <tr *ngFor="let r of resultsPurchaseHistory | async">
                     <th>{{ r.id }}</th>
-                    <th>{{ }}</th>
+                    <th></th>
                     <th>{{ r.payment_method }}</th>
                     <th id="status1" style="background-color: yellow;">Aguar. Pagamento</th>
                     <th><button (click)="openModalDetalhes()" type="button" class="btn btn-primary">Detalhe</button></th>
