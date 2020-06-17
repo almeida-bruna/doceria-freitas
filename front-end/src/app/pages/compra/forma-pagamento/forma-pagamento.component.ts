@@ -64,6 +64,7 @@ export class FormaPagamentoComponent implements OnInit {
   }
 
   gerarboleto() {
+    console.log("ola")
     let prod = this.cartService.total()
 
     let params = {"price": prod};
@@ -136,6 +137,14 @@ export class FormaPagamentoComponent implements OnInit {
 
   total(){
     return this.cartService.total()
+  }
+
+  habilitarBotao(){
+    let btn_finalizar = (<HTMLElement>document.querySelector('#btn_finalizar'));
+    btn_finalizar.setAttribute('style', 'display:block !important')
+    let btn_bloquear = (<HTMLElement>document.querySelector('#btn_bloquear'));
+    btn_bloquear.style.display = 'none';
+    
   }
 
 }

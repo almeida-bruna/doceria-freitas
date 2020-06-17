@@ -133,9 +133,14 @@ main {
     text-align: right;
     padding: 8px 15px 0px 0px
 }
-.content-pedido .btn{
-    margin-left: 155px;
-    margin-top: 30px;
+#btn_finalizar{
+    display: none !important;
+    margin-top: 60px;
+}
+
+#btn_bloquear{
+    background-color: #98FB98 !important;
+    margin-top: 60px;
 }
 
 .list-products {

@@ -6,27 +6,51 @@
     </u>
     <div class="content-main">
         <div class="content-dados">
-            <h2>Dados Pessoais</h2>
-            Email: <br>
-            Senha: <br>
-
-            Nome: {{nome}} <br>
-            CPF: <br>
-            Celular: <br>
-            Sexo: <br>
-            Data de Nasc: <br>
+            <h2 style="margin-left: 22px;">Dados Pessoais</h2>
+            <div *ngFor="let r of results | async" class="content-dados-pessoais">
+                <ul>
+                    <li><strong>E-mail</strong></li>
+                    <li>{{ r.email }}</li>
+                    <li><strong>Nome</strong></li>
+                    <li>{{ r.name }}</li>
+                    <li><strong>CPF</strong></li>
+                    <li>{{ r.cpf }}</li>
+                    <li><strong>Data de Nascimento</strong></li>
+                    <li>{{ r.dt_nasc }}</li>
+                </ul>
+                <ul>
+                    <li><strong>Senha</strong></li>
+                    <li>******</li>
+                    <li><strong>Celular</strong></li>
+                    <i>{{ r.cell_phone }}</i>
+                    <li><strong>Sexo</strong></li>
+                    <li *ngIf="r.sex == 2">Feminino</li>
+                    <li *ngIf="r.sex == 3">Masculino</li>
+                </ul>
+            </div>
         </div>
         <div class="content-dados">
-            <h2>Endereço</h2>
-            Cep: <br>
-            Endereço: <br>
-            Numero: <br>
-            Complemento: <br>
-            Bairro: <br>
-            Cidade: <br>
-            Estado: <br>
-
-            <button type="button" class="btn btn-success">Alterar Dados</button>
+            <h2 style="margin-left: 22px;">Endereço</h2>
+            <div *ngFor="let r of results | async" class="content-dados-pessoais">
+                <ul>
+                    <li><strong>Endereço</strong></li>
+                    <li>{{ r.address }}</li>
+                    <li><strong>Cep</strong></li>
+                    <li>{{ r.cep }}</li>
+                    <li><strong>Numero</strong></li>
+                    <li>{{ r.number }}</li>
+                    <li><strong>Complemento</strong></li>
+                    <li>{{ r.complement }}</li>
+                </ul>
+                <ul>
+                    <li><strong>Bairro</strong></li>
+                    <li>{{ r.district }}</li>
+                    <li><strong>Cidade</strong></li>
+                    <i>{{ r.city }}</i>
+                    <li><strong>Estado</strong></li>
+                    <li>{{ r.state }}</li>
+                </ul>
+            </div>
         </div>
     </div>
 </main>

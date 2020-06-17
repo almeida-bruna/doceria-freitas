@@ -1,7 +1,18 @@
-<app-header></app-header>
+<div class="content-logo">
+    <img src="../../../../assets/img/logo.PNG" alt="Logo">
+</div>
 <main>
     <div class="content-main">
-        <div class="content-title">
+        <h1>Pedido Realizado com Sucesso!</h1><br>
+        <p>Um e-mail de confirmação foi enviado a você em brunasousadealmeida@gmail.com com todos os detalhes do pedido.</p>
+        <p>Seu pagamento está sendo processado, você receberá um e-mail de confirmação.</p>
+        <p>Para realizar o pagamento, imprima o boleto</p>
+        <button (click)=(obterBoleto()) type="button" class="btn btn-secondary">Imprimir Boleto</button>
+        <div class="content-buttons">
+            <a class="btn btn-primary" href="#" role="button">Realizar nova compra</a>
+            <a routerLink="/pedidos" routerLinkActive="active" style="margin-left: 10px;" class="btn btn-primary" href="#" role="button">Ir para os meus pedidos</a>
+        </div>
+        <!-- <div class="content-title">
             <img class="icon-box" src="../../../../assets/icons/dinheiro.png" alt=""> Boleto
         </div>
         <div class="content-info">
@@ -14,6 +25,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </main>

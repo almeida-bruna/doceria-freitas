@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
 
     let clientId = {"id": sessionStorage.getItem('id')};
     let clientName = sessionStorage.getItem('nome');
-    console.log(clientName)
 
     if (clientId) {
       this.results = this.http.get(this.list_url, { params: clientId, headers: headers })
