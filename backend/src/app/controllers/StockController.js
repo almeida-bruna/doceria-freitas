@@ -19,36 +19,22 @@ class StockController {
   }
 
   async update(req, res) {
-    const stockId = req.params.id;
+    const productId = req.params.id;
 
-    const stock = await Stock.findByPk(stockId);
+    const stoke = await Stock.findOne({
+      where: { product_id: productId },
+    });
 
-    const dados = req.body;
-
-    if (dados.name) {
-      const stockExists = await stock.findOne({
-        where: { name: req.body.name },
-      });
-
-      if (stockExists) {
-        return res.status(400).json({ error: 'stock already exists' });
-      }
-    }
-
-    const { id, name } = await Stock.update(req.body);
+    const { id, quantity } = await stoke.update(req.body);
 
     return res.json({
       id,
-      name,
+      quantity,
     });
   }
 
   async get(req, res) {
-    const stock = await Stock.findAll({
-      where: {
-        disabled: '0',
-      },
-    });
+    const stock = await Stock.findAll();
 
     return res.json(stock);
   }

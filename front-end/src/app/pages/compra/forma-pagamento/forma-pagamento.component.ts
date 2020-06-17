@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/htt
 import {Product} from '../../home/home.model';
 import {CartService} from '../carrinho/carrinho.service'
 import { Router } from '@angular/router';
-var moment = require("moment");
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-forma-pagamento',
@@ -102,7 +102,7 @@ export class FormaPagamentoComponent implements OnInit {
 
 
     this.http.post(this.purchase, dados, {headers: headers} ).subscribe(
-      res => {
+      (res :any) => {
         this.results = res;
 
         const resp = Object.keys(this.cartService.items).map(item => {

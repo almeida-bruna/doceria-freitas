@@ -4,8 +4,8 @@ class Stock extends Model {
   static init(sequelize) {
     super.init(
       {
-        quantidade: Sequelize.STRING,
-        disabled: Sequelize.STRING
+        quantity: Sequelize.INTEGER,
+        exite: Sequelize.INTEGER
       },
       {
         sequelize
