@@ -48,34 +48,51 @@ export class FormaPagamentoComponent implements OnInit {
 
   gerarboleto() {
     let prod = this.cartService.total()
-
-    let params = {"price": prod};
-
-
-  //GERANDO BOLETO
-   this.http.post(this.boleto, params ).subscribe(
-      res => {
-        this.results = res;
-
-        // console.log(this.results);
-        // alert('Logou');
-
-      },
-      (err: HttpErrorResponse) => {
-        // alert(JSON.stringify(err.error.error));
-        console.log(err.name);
-        console.log(err.message);
-        console.log(err.status);
-      },
-    );
-
-    //SALVANDO COMPRA
-
     const token = localStorage.getItem('token');
-
     const headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
     .set('Authorization', `Bearer ${token}`)
+
+
+    let client = {"id": sessionStorage.getItem('id')};
+    this.http.get(this.list_url, { params: client, headers: headers }).subscribe(
+      res => {
+        const resClient = res[0];
+
+        console.log(resClient);
+
+        let params = {"price": prod, "name": resClient.name, "street": resClient.address, "number": resClient.number,
+        "complement": resClient.complement, "district": resClient.district, "state": resClient.state,
+        "postalCode": resClient.cep, "registerNumber": resClient.cpf, "city": resClient.city
+      };
+
+      console.log(params);
+
+
+
+      //GERANDO BOLETO
+      this.http.post(this.boleto, params ).subscribe(
+          res => {
+            this.results = res;
+
+            // console.log(this.results);
+            // alert('Logou');
+
+          },
+          (err: HttpErrorResponse) => {
+            // alert(JSON.stringify(err.error.error));
+            console.log(err.name);
+            console.log(err.message);
+            console.log(err.status);
+          },
+        );
+      }
+    )
+
+
+
+
+    //SALVANDO COMPRA
 
     const clientId = sessionStorage.getItem('id')
     const horaAtual = moment().format();
@@ -127,7 +144,7 @@ export class FormaPagamentoComponent implements OnInit {
     btn_finalizar.setAttribute('style', 'display:block !important')
     let btn_bloquear = (<HTMLElement>document.querySelector('#btn_bloquear'));
     btn_bloquear.style.display = 'none';
-    
+
   }
 
 }

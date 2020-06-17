@@ -10,9 +10,9 @@ class BoletoController {
       digitableLine: '23797.50603 91900.000125 08005.429108 7 72670000000999',
       paymentPlace:
         'Pagável preferencialmente na rede Bradesco ou Bradesco Expresso.',
-      beneficiary: 'UNICRED FLORIANÓPOLIS - CNPJ: 074.064.502/0001-12',
+      beneficiary: 'Doceria Freitas - CNPJ: 032.418.323/0001-96',
       beneficiaryAddress:
-        'Rua Tenete Silveira, 315 - Centro - Florianópolis - SC  - CEP 88010-301',
+        'Rua Doutor Cardoso Terra, 205 - Jardim Lisboa - São Paulo - SP  - CEP 03675-050',
       instructions:
         'Após o vencimento cobrar multa de 2,00% , mais juros ao mes de 1,00%.',
       agency: '7506',
@@ -37,27 +37,28 @@ class BoletoController {
       outherFees: ' ',
       chargeValue: ' ',
       payer: {
-        name: 'Bruno de Paula',
-        registerNumber: '221.412.772-05',
-        street: 'Estrada do Copiuva',
-        number: '1500',
-        complement: ' ',
-        district: 'Vila da Oportunidade',
-        city: 'Carapicuiba',
-        state: 'SP',
-        postalCode: '06330-00'
+        name: `${dados.name}`,
+        registerNumber: `${dados.cpf}`,
+        street: `${dados.address}`,
+        number: `${dados.number}`,
+        complement: `${dados.complement}`,
+        district: `${dados.district}`,
+        city: `${dados.city}`,
+        state: `${dados.state}`,
+        postalCode: `${dados.cep}`
       },
-      guarantor: {
-        name: 'Doceria Freitas',
-        registerNumber: '074.064.502/0001-12',
-        street: 'Servidão',
-        number: '439',
-        district: 'Estrada Nova',
-        complement: ' ',
-        city: 'Jaraguá do Sul',
-        state: 'SC',
-        postalCode: '89254-375'
-      }
+
+      // guarantor: {
+      //   name: 'Doceria Freitas',
+      //   registerNumber: '074.064.502/0001-12',
+      //   street: 'Servidão',
+      //   number: '439',
+      //   district: 'Estrada Nova',
+      //   complement: ' ',
+      //   city: 'Jaraguá do Sul',
+      //   state: 'SC',
+      //   postalCode: '89254-375'
+      // }
     }
 
     bradesco(boleto).then( data => {
