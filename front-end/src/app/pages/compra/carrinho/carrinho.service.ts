@@ -61,7 +61,7 @@ export class CartService {
         total = 0
         return total
       }else {
-        return total;
+        return total + 10;
       }
 
     }

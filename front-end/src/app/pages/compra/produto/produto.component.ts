@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../carrinho/carrinho.service'
+
 
 @Component({
   selector: 'app-produto',
@@ -21,7 +23,7 @@ export class ProdutoComponent implements OnInit {
 
   list_url = '/api/filterproductid';
 
-  constructor(private http:HttpClient, private modalService: NgbModal, private route: ActivatedRoute) {
+  constructor(private http:HttpClient, private modalService: NgbModal, private route: ActivatedRoute, private cartService: CartService) {
     this.route.params.subscribe(params => this.productId = params['id']);
    }
 
@@ -32,6 +34,10 @@ export class ProdutoComponent implements OnInit {
     this.product = this.http.get(this.list_url, { params } )
     console.log(this.product);
 
+  }
+
+  addCart(Product) {
+    this.cartService.addItem(Product)
   }
 
 }

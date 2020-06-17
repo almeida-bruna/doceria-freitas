@@ -51,9 +51,9 @@
                     </li>
                 </ul>
                 <div class="content-total">
-                    <div class="content-line"><strong>Subtotal:</strong> {{total() | currency: 'BRL': true}}</div>
-                    <div class="content-line"><strong>Frete:</strong> R$ 10,00</div>
-                    <div class="content-line"><strong>Total:</strong> R$ 61,00</div>
+                  <div class="content-line"><strong>Frete:</strong> R$ 10,00</div>
+                  <div class="content-line"><strong>Total:</strong> {{total() | currency: 'BRL': true}}</div>
+                  <div class="content-line"><strong></strong> </div>
                 </div>
                 <button id="btn_finalizar" type="button" class="btn btn-success" (click)="gerarboleto()">Finalizar compra</button>
                 <button id="btn_bloquear" type="button" class="btn">Finalizar compra</button>

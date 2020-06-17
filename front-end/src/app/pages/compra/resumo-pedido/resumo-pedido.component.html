@@ -25,13 +25,13 @@
             </tbody>
           </table>
           <div class="content-total">
-              <div class="content-line">
+              <!-- <div class="content-line">
                 <span class="title_summary">Subtotal:</span>{{total() | currency: 'BRL': true}}
-              </div>
+              </div> -->
               <div class="content-line">
                 <span style="margin-right: 60%">Frete:</span> R$ 10,00</div>
               <div class="content-line">
-                <strong><span style="margin-right: 58%;">Total:</span> R$ 61,00</strong></div>
+                <strong><span style="margin-right: 61%;">Total:</span>{{total() | currency: 'BRL': true}}</strong></div>
           </div>
           <button (click)="validaSession()" type="button" class="btn btn-success">Finalizar compra</button>
     </div>
