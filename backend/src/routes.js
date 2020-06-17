@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, static, Express } from 'express';
 import multer from 'multer';
 // import cors from 'cors';
 import multerConfig from './config/multer';
@@ -29,6 +29,11 @@ const upload = multer(multerConfig);
 //     origin: 'http://localhost:4200',
 //   })
 //   );
+routes.use(static(process.cwd()+"/../front-end/dist/front-end/"));
+
+routes.get('/', (req,res) => {
+  res.sendFile(process.cwd()+"/../front-end/dist/front-end/index.html")
+});
 
 routes.post('/sessions', SessionController.store);
 
