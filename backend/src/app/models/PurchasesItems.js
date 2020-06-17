@@ -5,6 +5,7 @@ class PurchasesItems extends Model {
     super.init(
       {
         qtd: Sequelize.STRING,
+        status_id: Sequelize.STRING
       },
       {
         sequelize,

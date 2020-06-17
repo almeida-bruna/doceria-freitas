@@ -15,6 +15,8 @@ import CategoryController from './app/controllers/CategoryController';
 import StateController from './app/controllers/StateController';
 import PromotionController from './app/controllers/PromotionController';
 import FilterClientController from './app/controllers/FilterClientController';
+import FilterPurchaseHistoryController from './app/controllers/FilterPurchaseHistoryController';
+import FilterPurchaseItemsController from './app/controllers/FilterPurchaseItemsController'
 import PurchaseController from './app/controllers/PurchaseController';
 import PurchaseItemsController from './app/controllers/PurchaseItemsController';
 import BoletoController from './app/controllers/BoletoController';
@@ -41,6 +43,12 @@ routes.get('/filtercategory', FilterCategoryController.show);
 
 // Filter Client
 routes.get('/filterclientid', FilterClientController.get);
+
+// Filter Purchase History
+routes.get('/filterpurchasehistory', FilterPurchaseHistoryController.get);
+
+// Filter Purchase Items
+routes.get('/filterpurchaseitems', FilterPurchaseItemsController.get);
 
 // State
 routes.get('/states', StateController.get);

@@ -1,6 +1,8 @@
+import { element } from 'protractor';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DetalhesPedidoComponent } from './../detalhes-pedido/detalhes-pedido.component';
 import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pedidos',
@@ -9,9 +11,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  url_purchasehistory = '/api/filterpurchasehistory';
+  url_purchaseitems = '/api/filterpurchaseitems';
+
+  resultsPurchaseHistory: any;
+  resultsPurchaseItems: any;
+
+  teste: any;
+
+  constructor(private modalService: NgbModal, private http:HttpClient) { }
 
   ngOnInit(): void {
+    const token = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
+    
+    let id = {"client_id": sessionStorage.getItem('id')};
+
+    this.resultsPurchaseHistory = this.http.get(this.url_purchasehistory, { params: id, headers: headers});
+
+    this.resultsPurchaseHistory.forEach(element => {
+      element.forEach(item => {
+        let purchase_id = {"purchase_id": item.id};
+
+        this.resultsPurchaseItems = this.http.get(this.url_purchaseitems, { params: purchase_id, headers: headers});
+
+        this.resultsPurchaseItems.forEach(purchaseItems => {
+          let cont = 0;
+          purchaseItems.forEach(item2 => {
+            cont+=1
+          });
+          // item.quant = cont;
+        });
+        // this.teste = element;
+        // console.log(element)
+      });
+      
+    });
   }
 
   openModalDetalhes(){

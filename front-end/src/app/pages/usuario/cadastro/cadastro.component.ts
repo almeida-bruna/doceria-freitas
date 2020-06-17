@@ -36,13 +36,6 @@ export class CadastroComponent implements OnInit {
   constructor(private http:HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    const token = localStorage.getItem('token');
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    })
-
     this.states = this.http.get(this.url_state);
   }
 

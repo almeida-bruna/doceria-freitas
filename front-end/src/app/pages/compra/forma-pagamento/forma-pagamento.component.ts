@@ -19,23 +19,6 @@ export class FormaPagamentoComponent implements OnInit {
 
   results: any;
 
-  // produtos = [
-  //   {
-  //     imagem: 'bala-recheada.webp',
-  //     nome: 'Bala Toffer',
-  //     quant: '1',
-  //     preco: '10,00',
-  //     total: '10.00'
-  //   },
-  //   {
-  //     imagem: 'pirulito-pop.webp',
-  //     nome: 'Pirulito Pop',
-  //     quant: '2',
-  //     preco: '13,00',
-  //     total: '26.00'
-  //   }
-  // ]
-
   constructor(private http:HttpClient, private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
@@ -64,7 +47,6 @@ export class FormaPagamentoComponent implements OnInit {
   }
 
   gerarboleto() {
-    console.log("ola")
     let prod = this.cartService.total()
 
     let params = {"price": prod};
@@ -109,7 +91,8 @@ export class FormaPagamentoComponent implements OnInit {
         const resp = Object.keys(this.cartService.items).map(item => {
           console.log(this.cartService.items[item].id)
           console.log(this.cartService.items[item].count)
-          let data = {"qtd": this.cartService.items[item].count, "purchase_id": res.id, "product_id": this.cartService.items[item].id}
+          let data = {"qtd": this.cartService.items[item].count, "purchase_id": res.id, "product_id": this.cartService.items[item].id,
+           "status_id": 1}
           console.log(data);
 
           this.http.post(this.purchase_items, data, {headers: headers} ).subscribe(

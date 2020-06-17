@@ -16,7 +16,8 @@
                     <li><strong>CPF</strong></li>
                     <li>{{ r.cpf }}</li>
                     <li><strong>Data de Nascimento</strong></li>
-                    <li>{{ r.dt_nasc }}</li>
+                    <li *ngIf="r.dt_nasc != 0;">{{ r.dt_nasc }}</li>
+                    <li *ngIf="r.dt_nasc == 0;">Sem Informação</li>
                 </ul>
                 <ul>
                     <li><strong>Senha</strong></li>
@@ -48,7 +49,7 @@
                     <li><strong>Cidade</strong></li>
                     <i>{{ r.city }}</i>
                     <li><strong>Estado</strong></li>
-                    <li>{{ r.state }}</li>
+                    <li>{{ stateClient }}</li>
                 </ul>
             </div>
         </div>

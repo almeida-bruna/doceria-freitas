@@ -9,8 +9,11 @@ import { HttpClient, HttpErrorResponse, HttpHeaders  } from '@angular/common/htt
 export class PerfilComponent implements OnInit {
 
   list_url = '/api/filterclientid';
+  url_state = '/api/states';
 
   results: any;
+  states: any;
+  stateClient: any;
 
   constructor(private http:HttpClient) { }
 
@@ -25,7 +28,20 @@ export class PerfilComponent implements OnInit {
     let id = {"id": sessionStorage.getItem('id')};
 
     this.results = this.http.get(this.list_url, { params: id, headers: headers});
-    console.log(this.results)
+    
+    this.results.forEach(itens => {
+      if (itens[0].state){
+        this.states = this.http.get(this.url_state);
+        this.states.forEach(element => {
+          element.forEach(state => {
+            if(state.id == itens[0].state){
+              this.stateClient = state.name
+            }
+          });
+          
+        });
+      }
+    });
   }
 
 }

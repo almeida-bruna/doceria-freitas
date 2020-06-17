@@ -15,7 +15,8 @@ class PurchaseItemsController {
     return res.json({
       id,
       product_id,
-      purchase_id
+      purchase_id,
+      status_id
     });
   }
 
