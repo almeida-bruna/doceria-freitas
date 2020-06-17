@@ -21,7 +21,7 @@
             <div class="valor-antigo">De: <strong>R$ {{p.price}}</strong></div>
             <div style="color: #A7AAAB;">Por:</div>
             <div class="valor-atual">R$ {{p.price}}</div>
-            <button routerLink="/resumo-pedido" type="button" class="btn btn-success">Comprar</button>
+            <button routerLink="/resumo-pedido" type="button" class="btn btn-success" (click)="addCart(p)">Comprar</button>
         </div>
     </div>
 </div>
