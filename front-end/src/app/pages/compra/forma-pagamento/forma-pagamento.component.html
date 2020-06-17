@@ -29,69 +29,17 @@
                     <div class="tipo-pagamento">
                         <i class="material-icons">monetization_on</i>
                         <div class="title-dados-pessoais">Pagamento</div><br><br>
-                        <!-- <button type="button" class="btn btn-primary">Cartão de Crédito</button><br><br> -->
-                        <button type="button" class="btn btn-primary">Boleto Bancario</button>
+                        <div style="float: left;margin-left: 5px;" class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                              Boleto Bancario
+                            </label>
+                          </div>
+                          <div class="text-boleto">O Boleto bancário será exibido após a confirmação da 
+                              compra e poderá ser impresso para pagamento em qualquer
+                               agência bancária, ou ter o número anotado para pagamento
+                                pelo telefone ou internet.</div>
                     </div>
-                    <!-- <div class="dados-pagamento">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Numero do cartão</label>
-                                <input type="number" class="form-control">
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="1" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="1">Master</label>
-                              </div>
-                              <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="2" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="2">Visa</label>
-                              </div>
-                              <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="3" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="3">Elo</label>
-                              </div>
-                            <div class="content-radios">
-                                <img src="../../../../assets/icons/mastercard.png" alt="Master">
-                                <img src="../../../../assets/icons/visto.png" alt="Visa">
-                                <img class="img-elo" src="../../../../assets/img/elo-logo-1-1.png" alt="Elo">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nome impresso no cartão</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group col-md-10" style="padding-left: 0px !important; height: 70px;">
-                                <div class="form-group col-md-4" style="float: left; padding-left: 0px !important;">
-                                    <label for="inputState">Ano</label>
-                                    <select id="inputState" class="form-control">
-                                      <option selected>2021</option>
-                                      <option>2022</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-4" style="float: left;">
-                                    <label for="inputState">Mês</label>
-                                    <select id="inputState" class="form-control">
-                                      <option selected>1</option>
-                                      <option>2</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-5" style="padding-left: 0px !important;">
-                                <label for="exampleInputEmail1">Código de segurança</label>
-                                <input type="number" class="form-control">
-                            </div>
-                            <div class="form-group col-md-6" style="padding-left: 0px !important;">
-                                <label for="inputState">Parcelas</label>
-                                <select id="inputState" class="form-control">
-                                  <option selected>1x - 100,00</option>
-                                  <option>2x - 50,00</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-10" style="padding-left: 0px !important;">
-                                <label for="exampleInputEmail1">CPF</label>
-                                <input type="number" class="form-control">
-                            </div>
-                        </form>
-                    </div> -->
                 </div>
             </div>
             <div class="content-pedido">
@@ -105,7 +53,7 @@
                     <div class="content-line"><strong>Frete:</strong> R$ 10,00</div>
                     <div class="content-line"><strong>Total:</strong> R$ 61,00</div>
                 </div>
-                <button type="button" class="btn btn-success" (click)="gerarboleto()">Finalizar compra</button>
+                <button style="background-color: #98FB98 !important;" type="button" class="btn" (click)="gerarboleto()">Finalizar compra</button>
             </div>
         </div>
     </div>
