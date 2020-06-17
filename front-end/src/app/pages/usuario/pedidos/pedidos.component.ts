@@ -17,8 +17,6 @@ export class PedidosComponent implements OnInit {
   resultsPurchaseHistory: any;
   resultsPurchaseItems: any;
 
-  teste: any;
-
   constructor(private modalService: NgbModal, private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -36,18 +34,15 @@ export class PedidosComponent implements OnInit {
     this.resultsPurchaseHistory.forEach(element => {
       element.forEach(item => {
         let purchase_id = {"purchase_id": item.id};
-
         this.resultsPurchaseItems = this.http.get(this.url_purchaseitems, { params: purchase_id, headers: headers});
-
         this.resultsPurchaseItems.forEach(purchaseItems => {
+          // console.log(purchaseItems)
           let cont = 0;
           purchaseItems.forEach(item2 => {
             cont+=1
           });
-          // item.quant = cont;
         });
-        // this.teste = element;
-        // console.log(element)
+
       });
       
     });

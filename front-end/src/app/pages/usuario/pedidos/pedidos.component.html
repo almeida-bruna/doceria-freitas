@@ -12,7 +12,6 @@
               <tr>
                 <th scope="col">N Pedido</th>
                 <th scope="col">Quantidade</th>
-                <th scope="col">Forma de Pag.</th>
                 <th scope="col">Status</th>
                 <th scope="col">Detalhes</th>
                 <th scope="col">Cancelar</th>
@@ -21,7 +20,6 @@
             <tbody>
                 <tr *ngFor="let r of resultsPurchaseHistory | async">
                     <th>{{ r.id }}</th>
-                    <th></th>
                     <th>{{ r.payment_method }}</th>
                     <th id="status1" style="background-color: yellow;">Aguar. Pagamento</th>
                     <th><button (click)="openModalDetalhes()" type="button" class="btn btn-primary">Detalhe</button></th>

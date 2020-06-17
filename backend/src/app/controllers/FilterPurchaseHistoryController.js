@@ -1,4 +1,5 @@
 import Purchase from '../models/Purchase';
+import PurchasesItems from '../models/PurchasesItems';
 
 class FilterPurchaseHistoryController {
   async get(req, res) {

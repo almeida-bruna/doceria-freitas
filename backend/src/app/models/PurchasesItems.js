@@ -16,7 +16,7 @@ class PurchasesItems extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.PurchasesItems, { foreignKey: 'purchase_id', as: 'purchase' });
+    this.belongsTo(models.Purchase, { foreignKey: 'purchase_id', as: 'purchase' });
     this.belongsTo(models.Product, { foreignKey: 'product_id', as: 'products' });
   }
 
