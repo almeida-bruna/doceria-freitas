@@ -38,14 +38,14 @@ class BoletoController {
       chargeValue: ' ',
       payer: {
         name: `${dados.name}`,
-        registerNumber: `${dados.cpf}`,
-        street: `${dados.address}`,
+        registerNumber: `47526559865`,
+        street: `Estrada do Copiuva`,
         number: `${dados.number}`,
         complement: `${dados.complement}`,
         district: `${dados.district}`,
         city: `${dados.city}`,
-        state: `${dados.state}`,
-        postalCode: `${dados.cep}`
+        state: `SP`,
+        postalCode: `633000`
       },
 
       // guarantor: {
